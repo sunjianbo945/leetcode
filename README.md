@@ -10,5 +10,7 @@ Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBU
 |39|Combination Sum|2019.07.13|https://leetcode.com/problems/combination-sum/|
 |40|Combination Summ II|2019.07.13|https://leetcode.com/problems/combination-sum-ii/|
 |216|Combination Sum III|2019.07.13|https://leetcode.com/problems/combination-sum-iii/
-
+|77|Combinations|2019.07.14|https://leetcode.com/problems/combinations/|
+|78|Subsets|2019.07.14|https://leetcode.com/problems/subsets/|
+|90|Subsets II|2019.07.14|https://leetcode.com/problems/subsets-ii/|
 

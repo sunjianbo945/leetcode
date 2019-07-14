@@ -1,7 +1,7 @@
 # leetcode link
 # Difficulty: ***
 # https://leetcode.com/problems/combination-sum-iii
-# DFS & BFS
+# DFS
 
 from typing import List
 

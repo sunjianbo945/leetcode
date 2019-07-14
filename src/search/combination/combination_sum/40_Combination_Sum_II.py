@@ -1,7 +1,7 @@
 # leetcode link
 # Difficulty: ***
 # https://leetcode.com/problems/combination-sum-ii/
-# DFS & BFS
+# DFS
 
 from typing import List,Tuple,Set
 
@@ -33,6 +33,7 @@ class Solution:
 
 def main():
     print(Solution().combinationSum2([10,1,2,7,6,1,5],8))
+
 
 if __name__=='__main__':
     main()
