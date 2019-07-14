@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed3213-8c55-441f-8735-9d80745baa04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search/combination/401_Binary_Watch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search/combination/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/216_Combination_Sum_III.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/377_Combination_Sum_IV.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/40_Combination_Sum_II.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,19 +43,51 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="135">
-                <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <first_editor relative-caret-position="180">
+                <caret line="12" selection-start-line="12" selection-end-line="12" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="420">
+              <caret line="28" selection-start-line="28" selection-end-line="32" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/40_Combination_Sum_II.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="33" selection-start-line="33" selection-end-line="37" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/216_Combination_Sum_III.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/377_Combination_Sum_IV.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/leetcode/lib/python3.7/json/decoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="354" selection-start-line="354" selection-end-line="354" />
             </state>
           </provider>
         </entry>
@@ -100,8 +130,12 @@
         <option value="$PROJECT_DIR$/src/subject/DFS.py" />
         <option value="$PROJECT_DIR$/src/search/combination/17_Letter_Combinations_of_a_Phone_Number.py" />
         <option value="$PROJECT_DIR$/src/search/combination/401_Binary_Watch.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/search/combination/39_Combination_Sum.py" />
+        <option value="$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py" />
+        <option value="$PROJECT_DIR$/src/search/combination/combination_sum/40_Combination_Sum_II.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/search/combination/combination_sum/216_Combination_Sum_III.py" />
+        <option value="$PROJECT_DIR$/src/search/combination/combination_sum/377_Combination_Sum_IV.py" />
       </list>
     </option>
   </component>
@@ -145,6 +179,14 @@
               <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="combination" type="462c0819:PsiDirectoryNode" />
+              <item name="combination_sum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="subject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -179,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.401_Binary_Watch">
+  <component name="RunManager" selected="Python.377_Combination_Sum_IV">
     <configuration name="17_Letter_Combinations_of_a_Phone_Number" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="leetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,6 +235,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/search/combination/17_Letter_Combinations_of_a_Phone_Number.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="216_Combination_Sum_III" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/search/combination/combination_sum" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/search/combination/combination_sum/216_Combination_Sum_III.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="377_Combination_Sum_IV" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/search/combination/combination_sum" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/search/combination/combination_sum/377_Combination_Sum_IV.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,12 +306,39 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="40_Combination_Sum_II" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/search/combination/combination_sum" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/search/combination/combination_sum/40_Combination_Sum_II.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.17_Letter_Combinations_of_a_Phone_Number" />
       <item itemvalue="Python.401_Binary_Watch" />
+      <item itemvalue="Python.40_Combination_Sum_II" />
+      <item itemvalue="Python.216_Combination_Sum_III" />
+      <item itemvalue="Python.377_Combination_Sum_IV" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.377_Combination_Sum_IV" />
+        <item itemvalue="Python.216_Combination_Sum_III" />
+        <item itemvalue="Python.40_Combination_Sum_II" />
         <item itemvalue="Python.401_Binary_Watch" />
         <item itemvalue="Python.17_Letter_Combinations_of_a_Phone_Number" />
       </list>
@@ -251,7 +362,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -259,7 +370,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15529905" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20041972" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -302,6 +413,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/search/combination/401_Binary_Watch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" selection-start-line="41" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/search/combination/17_Letter_Combinations_of_a_Phone_Number.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -316,26 +441,36 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <first_editor relative-caret-position="180">
+            <caret line="12" selection-start-line="12" selection-end-line="12" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/combination/401_Binary_Watch.py">
+    <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/40_Combination_Sum_II.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" selection-start-line="41" selection-end-line="45" selection-end-column="10" />
+        <state relative-caret-position="367">
+          <caret line="33" selection-start-line="33" selection-end-line="37" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/39_Combination_Sum.py">
+    <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/216_Combination_Sum_III.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        <state>
+          <caret selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/leetcode/lib/python3.7/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/search/combination/combination_sum/377_Combination_Sum_IV.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

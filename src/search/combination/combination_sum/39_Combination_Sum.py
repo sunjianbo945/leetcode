@@ -1,6 +1,6 @@
 # leetcode link
 # Difficulty: ***
-# https://leetcode.com/problems/binary-watch/
+# https://leetcode.com/problems/combination-sum/
 # DFS & BFS
 
 from typing import List
