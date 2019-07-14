@@ -5,6 +5,7 @@ Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBU
 
 |Question Number|Question Name|Date|Link|
 |---------------|-------------|----|----|
+|Combinations|
 |17|Letter Combinations of a Phone Number|2019.07.13|https://leetcode.com/problems/letter-combinations-of-a-phone-number/|
 |401|Binary Watch|2019.07.13|https://leetcode.com/problems/binary-watch/|
 |39|Combination Sum|2019.07.13|https://leetcode.com/problems/combination-sum/|
@@ -13,4 +14,6 @@ Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBU
 |77|Combinations|2019.07.14|https://leetcode.com/problems/combinations/|
 |78|Subsets|2019.07.14|https://leetcode.com/problems/subsets/|
 |90|Subsets II|2019.07.14|https://leetcode.com/problems/subsets-ii/|
+Permutations|
+|46|Permutations|2019.07.14|https://leetcode.com/problems/permutations|
 
