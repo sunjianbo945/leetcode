@@ -16,4 +16,5 @@ Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBU
 |90|Subsets II|2019.07.14|https://leetcode.com/problems/subsets-ii/|
 Permutations|
 |46|Permutations|2019.07.14|https://leetcode.com/problems/permutations|
-
+|47|Permutations II|2019.07.14|https://leetcode.com/problems/permutations-ii/|
+|60|Permutation Sequence|2019/07.14|https://leetcode.com/problems/permutation-sequence/|
