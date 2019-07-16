@@ -1,8 +1,3 @@
-# leetcode link
-# Difficulty: ***
-# https://leetcode.com/problems/combination-sum-iii
-# DFS
-
 from typing import List
 
 class Solution:
