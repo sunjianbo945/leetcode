@@ -30,5 +30,10 @@ Permutations|
 |51|N Queens|2019.07.16|https://leetcode.com/problems/n-queens/|
 |52|N Queens|2019.07.16|https://leetcode.com/problems/n-queens-ii/|
 |DP|
-|70|Climbing Starts|2017|https://leetcode.com/problems/climbing-stairs|
-|509|Fibonacci Number|2017|https://leetcode.com/problems/fibonacci-number/|
+|70|Climbing Starts|2017.07.17|https://leetcode.com/problems/climbing-stairs|
+|509|Fibonacci Number|2017.07.17|https://leetcode.com/problems/fibonacci-number/|
+|303|Range Sum Query - Immutable|2017.07.17|https://leetcode.com/problems/range-sum-query-immutable/
+|746|Min Cost Climbing Stairs|2017.07.17|https://leetcode.com/problems/min-cost-climbing-stairs/|
+|53|Maximum Subarray|2017.07.17|https://leetcode.com/problems/maximum-subarray/|
+|121|Best Time to Buy and Sell Stock|2019.07.17|https://leetcode.com/problems/best-time-to-buy-and-sell-stock/|
+|198|House Robber|2019.07.17|https://leetcode.com/problems/house-robber/|
