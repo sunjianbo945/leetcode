@@ -38,9 +38,9 @@ class Solution:
         return ret
 
 
-
 def main():
     print(Solution().readBinaryWatch(1))
+
 
 if __name__=='__main__':
     main()
