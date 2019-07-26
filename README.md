@@ -39,6 +39,37 @@ Permutations|
 |198|House Robber|2019.07.17|https://leetcode.com/problems/house-robber/|
 |213|House Robber II|2019..07.17|https://leetcode.com/problems/house-robber-ii/|
 |309|Best Time to Buy and Sell Stock with Cooldown|2019.07.17|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/|
+|740|Delete and Earn|2019.07.17|https://leetcode.com/problems/delete-and-earn/|
+|790|Domino and Tromino|2019.07.17|https://leetcode.com/problems/domino-and-tromino-tiling/|
+|801|Minimum Swaps To Make Sequences Increasing|2019.7.18|https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/|
+|139|Word Break|2019.07.19|https://leetcode.com/problems/word-break/|
+|818|Race Car|2019.07.20|https://leetcode.com/problems/race-car/|
+|140|Word Break II|2019.07.21|https://leetcode.com/problems/word-break-ii/|
+|688|Knight Probability in Chessboard|2019.07.22|https://leetcode.com/problems/knight-probability-in-chessboard/|
+|576|Out of Boundary Paths|2019.07.23|https://leetcode.com/problems/out-of-boundary-paths/|
+|935|Knight Dialer|2019.07.24|https://leetcode.com/problems/knight-dialer/|
+|85|Maximal Rectangle|2019.07.25|https://leetcode.com/problems/maximal-rectangle/|
+|221|Maximal Square|2019.07.25|https://leetcode.com/problems/maximal-square/|
+|304|Range Sum Query 2D - Immutable|2019.07.25|https://leetcode.com/problems/range-sum-query-2d-immutable/|
+|62|Unique Paths|2019.07.25|https://leetcode.com/problems/unique-paths/|
+|63|Unique Paths II|2019.07.25|https://leetcode.com/problems/unique-paths-ii/|
+|64|Minimum Path Sum|2019.07.25|https://leetcode.com/problems/minimum-path-sum/|
+|120|Triangle|2019.07.25|https://leetcode.com/problems/triangle/|
+|174|Dungeon Game|2019.07.25|https://leetcode.com/problems/dungeon-game/|
+|931|Minimum Falling Path Sum|2019.07.25|https://leetcode.com/problems/minimum-falling-path-sum/|
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
