@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed3213-8c55-441f-8735-9d80745baa04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/120_Triangle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/64_Minimum_Path_Sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/first_hundred_liked/3_Longest_Substring_Without_Repeating_Characters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/first_hundred_liked/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.120_Triangle">
+  <component name="RunManager" selected="Python.3_Longest_Substring_Without_Repeating_Characters">
     <configuration name="120_Triangle" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="leetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,7 +71,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="303_Range_Sum_Query_Immutable" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="3_Longest_Substring_Without_Repeating_Characters" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="leetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -79,11 +79,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DP" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/first_hundred_liked" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DP/easy/303_Range_Sum_Query_Immutable.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/first_hundred_liked/3_Longest_Substring_Without_Repeating_Characters.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,19 +156,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.303_Range_Sum_Query_Immutable" />
       <item itemvalue="Python.746_Min_Cost_Climbing_Stairs" />
       <item itemvalue="Python.740_Delete_and_Earn" />
       <item itemvalue="Python.63_Unique_Paths_II" />
       <item itemvalue="Python.120_Triangle" />
+      <item itemvalue="Python.3_Longest_Substring_Without_Repeating_Characters" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.3_Longest_Substring_Without_Repeating_Characters" />
         <item itemvalue="Python.120_Triangle" />
         <item itemvalue="Python.63_Unique_Paths_II" />
         <item itemvalue="Python.740_Delete_and_Earn" />
         <item itemvalue="Python.746_Min_Cost_Climbing_Stairs" />
-        <item itemvalue="Python.303_Range_Sum_Query_Immutable" />
       </list>
     </recent_temporary>
   </component>
