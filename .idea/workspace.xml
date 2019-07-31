@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed3213-8c55-441f-8735-9d80745baa04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/139_Word_Break.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/740_Delete_and_Earn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/mid/140_Word_Break_II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/mid/790_Domino_and_Tromino.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/mid/801_Minimum_Swaps_To_Make_Sequences_Increasing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/mid/818_Race_Car.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/easy/62_Unique_Paths.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/easy/63_Unique_Paths_II.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,28 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.740_Delete_and_Earn">
-    <configuration name="22_Generate_Parentheses" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="leetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/search/parentheses" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/search/parentheses/22_Generate_Parentheses.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.63_Unique_Paths_II">
     <configuration name="303_Range_Sum_Query_Immutable" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="leetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +86,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DP/easy/509_Fibonacci_Number.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="63_Unique_Paths_II" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/DP/easy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DP/easy/63_Unique_Paths_II.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,19 +158,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.22_Generate_Parentheses" />
       <item itemvalue="Python.509_Fibonacci_Number" />
       <item itemvalue="Python.303_Range_Sum_Query_Immutable" />
       <item itemvalue="Python.746_Min_Cost_Climbing_Stairs" />
       <item itemvalue="Python.740_Delete_and_Earn" />
+      <item itemvalue="Python.63_Unique_Paths_II" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.63_Unique_Paths_II" />
         <item itemvalue="Python.740_Delete_and_Earn" />
         <item itemvalue="Python.746_Min_Cost_Climbing_Stairs" />
         <item itemvalue="Python.303_Range_Sum_Query_Immutable" />
         <item itemvalue="Python.509_Fibonacci_Number" />
-        <item itemvalue="Python.22_Generate_Parentheses" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +192,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
