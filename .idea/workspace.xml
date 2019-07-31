@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed3213-8c55-441f-8735-9d80745baa04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/174_Dungeon_Game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DP/easy/931_Minimum_Falling_Path_Sum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DP/mid/790_Domino_and_Tromino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/mid/790_Domino_and_Tromino.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

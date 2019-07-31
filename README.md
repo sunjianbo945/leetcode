@@ -57,6 +57,16 @@ Permutations|
 |120|Triangle|2019.07.25|https://leetcode.com/problems/triangle/|
 |174|Dungeon Game|2019.07.25|https://leetcode.com/problems/dungeon-game/|
 |931|Minimum Falling Path Sum|2019.07.25|https://leetcode.com/problems/minimum-falling-path-sum/|
+|322|Coin Change|2019.07.26|https://leetcode.com/problems/coin-change/|
+|416|Partition Equal Subset Sum|2019.07.26|https://leetcode.com/problems/partition-equal-subset-sum/|
+|494|Target Sum|2019.07.26|https://leetcode.com/problems/target-sum/|
+|72|Edit Distance|2019.07.26|https://leetcode.com/problems/edit-distance/|
+|10|Regular Expression Matching|2019.07.27|https://leetcode.com/problems/regular-expression-matching/|
+|44|Wildcard Matching|2019.07.28|https://leetcode.com/problems/wildcard-matching/|
+|97|Interleaving String|2019.07.28|https://leetcode.com/problems/interleaving-string/|
+|115|Distinct Subsequences|2019.07.29|https://leetcode.com/problems/distinct-subsequences/|
+|583|Delete Operation for Two Strings|2019.07.29|https://leetcode.com/problems/delete-operation-for-two-strings/|
+|712|Minimum ASCII Delete Sum for Two Strings|2019.07.30|https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/|
 |first 100 liked questions|-------------|----|----|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 
