@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed3213-8c55-441f-8735-9d80745baa04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/first_hundred_liked/3_Longest_Substring_Without_Repeating_Characters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/first_hundred_liked/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

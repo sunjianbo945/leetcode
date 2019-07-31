@@ -57,7 +57,9 @@ Permutations|
 |120|Triangle|2019.07.25|https://leetcode.com/problems/triangle/|
 |174|Dungeon Game|2019.07.25|https://leetcode.com/problems/dungeon-game/|
 |931|Minimum Falling Path Sum|2019.07.25|https://leetcode.com/problems/minimum-falling-path-sum/|
-
+|---------------|-------------|----|----|
+|first 100 liked questions|-------------|----|----|
+|3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 
 
 
