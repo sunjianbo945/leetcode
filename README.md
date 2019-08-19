@@ -2,6 +2,7 @@
 
 Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBUmDEXKUMO31DBjfeMoA0dlfIA/edit#gid=126913158
 
+Good book reference : https://jean-ch.gitbooks.io/lintcode-leetcode/content/
 
 |Question Number|Question Name|Date|Link|
 |---------------|-------------|----|----|
