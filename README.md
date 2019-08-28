@@ -68,7 +68,23 @@ Permutations|
 |115|Distinct Subsequences|2019.07.29|https://leetcode.com/problems/distinct-subsequences/|
 |583|Delete Operation for Two Strings|2019.07.29|https://leetcode.com/problems/delete-operation-for-two-strings/|
 |712|Minimum ASCII Delete Sum for Two Strings|2019.07.30|https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/|
-|first 100 liked questions|-------------|----|----|
+|Tree|
+|94|Binary Tree Inorder Traversal|https://leetcode.com/problems/binary-tree-inorder-traversal/|
+|589|N-ary Tree Preorder Traversal|https://leetcode.com/problems/n-ary-tree-preorder-traversal/|
+|590|N-ary Tree Postorder Traversal|https://leetcode.com/problems/n-ary-tree-postorder-traversal/|
+|100|Same Tree|https://leetcode.com/problems/same-tree/|
+|101|Symmetric Tree|https://leetcode.com/problems/symmetric-tree/|
+|104|Maximum Depth of Binary Tree|https://leetcode.com/problems/maximum-depth-of-binary-tree/|
+|110|Balanced Binary Tree|https://leetcode.com/problems/balanced-binary-tree/|
+|111|Minimum Depth of Binary Tree|https://leetcode.com/problems/minimum-depth-of-binary-tree/|
+|572|Subtree of Another Tree|https://leetcode.com/problems/subtree-of-another-tree/|
+|965|Univalued Binary Tree|https://leetcode.com/problems/univalued-binary-tree/|
+|102|Binary Tree Level Order Traversal|https://leetcode.com/problems/binary-tree-level-order-traversal/|
+|107|Binary Tree Level Order Traversal II|https://leetcode.com/problems/binary-tree-level-order-traversal-ii/|
+|429|N-ary Tree Level Order Traversal|https://leetcode.com/problems/n-ary-tree-level-order-traversal/|
+|872|Leaf-Similar Trees|https://leetcode.com/problems/leaf-similar-trees/|
+|987|Vertical Order Traversal of a Binary Tree|https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/|
+|First 100 liked questions|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 
 
