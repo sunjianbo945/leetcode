@@ -84,6 +84,54 @@ Permutations|
 |429|N-ary Tree Level Order Traversal|https://leetcode.com/problems/n-ary-tree-level-order-traversal/|
 |872|Leaf-Similar Trees|https://leetcode.com/problems/leaf-similar-trees/|
 |987|Vertical Order Traversal of a Binary Tree|https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/|
+|814|Binary Tree Pruning|https://leetcode.com/problems/binary-tree-pruning/|
+|669|Trim a Binary Search Tree|https://leetcode.com/problems/trim-a-binary-search-tree/|
+|112|Path Sum|https://leetcode.com/problems/path-sum/|
+|113|Path Sum II|https://leetcode.com/problems/path-sum-ii/|
+|437|Path Sum III|https://leetcode.com/problems/path-sum-iii/|
+|124|Binary Tree Maximum Path Sum|https://leetcode.com/problems/binary-tree-maximum-path-sum/|
+|543|Diameter of Binary Tree|https://leetcode.com/problems/diameter-of-binary-tree/|
+|687|Longest Univalue Path|https://leetcode.com/problems/longest-univalue-path/|
+|129|Sum Root to Leaf Numbers|https://leetcode.com/problems/sum-root-to-leaf-numbers/|
+|257|Binary Tree Paths|https://leetcode.com/problems/binary-tree-paths/|
+|236|Lowest Common Ancestor of a Binary Tree|https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/|
+|235|Lowest Common Ancestor of a Binary Search Tree|https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/|
+|297|Serialize and Deserialize Binary Tree|https://leetcode.com/problems/serialize-and-deserialize-binary-tree/|
+|449|Serialize and Deserialize BST|https://leetcode.com/problems/serialize-and-deserialize-bst/|
+|508|Most Frequent Subtree Sum|https://leetcode.com/problems/most-frequent-subtree-sum/|
+|968|Binary Tree Cameras|https://leetcode.com/problems/binary-tree-cameras/|
+|337|House Robber III|https://leetcode.com/problems/house-robber-iii/|
+|979|Distribute Coins in Binary Tree|https://leetcode.com/problems/distribute-coins-in-binary-tree/|
+|98|Validate Binary Search Tree|https://leetcode.com/problems/validate-binary-search-tree/|
+|530|Minimum Absolute Difference in BST|https://leetcode.com/problems/minimum-absolute-difference-in-bst/|
+|700|Search in a Binary Search Tree|https://leetcode.com/problems/search-in-a-binary-search-tree/|
+|701|Insert into a Binary Search Tree|https://leetcode.com/problems/insert-into-a-binary-search-tree/|
+|230|Kth Smallest Element in a BST|https://leetcode.com/problems/kth-smallest-element-in-a-bst/|
+|99|Recover Binary Search Tree|https://leetcode.com/problems/recover-binary-search-tree/|
+|108|Convert Sorted Array to Binary Search Tree|https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/|
+|501|Find Mode in Binary Search Tree|https://leetcode.com/problems/find-mode-in-binary-search-tree/|
+|450|Delete Node in a BST|https://leetcode.com/problems/delete-node-in-a-bst/|
+|Binary Search|
+|35|Search Insert Position|https://leetcode.com/problems/search-insert-position/|
+|34|Find First and Last Position of Element in Sorted Array|https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/|
+|704|Binary Search|https://leetcode.com/problems/binary-search/|
+|981|Time Based Key-Value Store|https://leetcode.com/problems/time-based-key-value-store/|
+|33|Search in Rotated Sorted Array|https://leetcode.com/problems/search-in-rotated-sorted-array/|
+|81|Search in Rotated Sorted Array II|https://leetcode.com/problems/search-in-rotated-sorted-array-ii/|
+|153|Find Minimum in Rotated Sorted Array|https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/|
+|154|Find Minimum in Rotated Sorted Array II|https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/|
+|162|Find Peak Element|https://leetcode.com/problems/find-peak-element/|
+|852|Peak Index in a Mountain Array|https://leetcode.com/problems/peak-index-in-a-mountain-array/|
+|69|Sqrt(x)|https://leetcode.com/problems/sqrtx/|
+|74|Search a 2D Matrix|https://leetcode.com/problems/search-a-2d-matrix/|
+|378|Kth Smallest Element in a Sorted Matrix|https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/|
+|668|Kth Smallest Number in Multiplication Table|https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/|
+|778|Swim in Rising Water|https://leetcode.com/problems/swim-in-rising-water/|
+|174|Dungeon Game|https://leetcode.com/problems/dungeon-game/|
+|875|Koko Eating Bananas|https://leetcode.com/problems/koko-eating-bananas/|
+|4|Median of Two Sorted Arrays|https://leetcode.com/problems/median-of-two-sorted-arrays/|
+|719|Find K-th Smallest Pair Distance|https://leetcode.com/problems/find-k-th-smallest-pair-distance/|
+|786|K-th Smallest Prime Fraction|https://leetcode.com/problems/k-th-smallest-prime-fraction/|
 |First 100 liked questions|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 
