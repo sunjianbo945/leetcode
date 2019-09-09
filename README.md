@@ -132,6 +132,9 @@ Permutations|
 |4|Median of Two Sorted Arrays|https://leetcode.com/problems/median-of-two-sorted-arrays/|
 |719|Find K-th Smallest Pair Distance|https://leetcode.com/problems/find-k-th-smallest-pair-distance/|
 |786|K-th Smallest Prime Fraction|https://leetcode.com/problems/k-th-smallest-prime-fraction/|
+|List|
+|2|Add Two Numbers|https://leetcode.com/problems/add-two-numbers/|
+|445|Add Two Numbers II|https://leetcode.com/problems/add-two-numbers-ii/|
 |First 100 liked questions|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 
