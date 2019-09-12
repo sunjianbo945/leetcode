@@ -26,7 +26,7 @@ class Binary_Tree_Pruning_814:
 
 
 
-class Solution:
+class Trim_a_Binary_Search_Tree_669:
     def trimBST(self, root: TreeNode, L: int, R: int) -> TreeNode:
         if not root:
             return None
