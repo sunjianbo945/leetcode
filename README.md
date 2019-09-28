@@ -4,6 +4,9 @@ Questions depends on https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBU
 
 Good book reference : https://jean-ch.gitbooks.io/lintcode-leetcode/content/
 
+<details>
+<summary>Topics</summary>
+
 |Question Number|Question Name|Date|Link|
 |---------------|-------------|----|----|
 |Combinations|
@@ -137,7 +140,7 @@ Permutations|
 |445|Add Two Numbers II|https://leetcode.com/problems/add-two-numbers-ii/|
 |First 100 liked questions|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
-
+</details>
 
 
 
