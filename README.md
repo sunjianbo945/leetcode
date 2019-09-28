@@ -144,6 +144,7 @@ Permutations|
 
 <details>
 <summary>Bloomberg - 2019.09.30</summary>
+
 |Question Number|Question Name|Link|
 |---------------|-------------|----|
 |138|Copy List with Random Pointer|https://leetcode.com/problems/copy-list-with-random-pointer/|
