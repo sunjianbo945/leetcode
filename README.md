@@ -142,6 +142,15 @@ Permutations|
 |3|Longest Substring Without Repeating Characters|2019.07.26|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
 </details>
 
+<details>
+<summary>Bloomberg - 2019.09.30</summary>
+|Question Number|Question Name|Link|
+|---------------|-------------|----|
+|138|Copy List with Random Pointer|https://leetcode.com/problems/copy-list-with-random-pointer/|
+
+
+</details>
+
 
 
 
