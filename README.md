@@ -148,6 +148,68 @@ Permutations|
 |Question Number|Question Name|Link|
 |---------------|-------------|----|
 |138|Copy List with Random Pointer|https://leetcode.com/problems/copy-list-with-random-pointer/|
+|146|LRU Cache|https://leetcode.com/problems/lru-cache/|
+|451|Sort Characters By Frequency|https://leetcode.com/problems/sort-characters-by-frequency/|
+|445|Add Two Numbers II|https://leetcode.com/problems/add-two-numbers-ii/|
+|582|Kill Process|https://www.lintcode.com/problem/kill-process/description|
+|117|Populating Next Right Pointers in Each Node II|https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/|
+|20|Valid Parentheses|https://leetcode.com/problems/valid-parentheses/|
+|1|Two Sum|https://leetcode.com/problems/two-sum/|
+|116|Populating Next Right Pointers in Each Node|https://leetcode.com/problems/populating-next-right-pointers-in-each-node/|
+|121|Best Time to Buy and Sell Stock|https://leetcode.com/problems/best-time-to-buy-and-sell-stock/|
+|200|Number of Islands|https://leetcode.com/problems/number-of-islands/|
+|42|Trapping Rain Water|https://leetcode.com/problems/trapping-rain-water/|
+|723|Candy Crush|https://www.lintcode.com/problem/candy-crush/description|
+|2|Add Two Numbers|https://leetcode.com/problems/add-two-numbers/|
+|56|Merge Intervals|https://leetcode.com/problems/merge-intervals/|
+|380|Insert Delete GetRandom|https://leetcode.com/problems/insert-delete-getrandom-o1/|
+|283|Move Zeroes|https://leetcode.com/problems/move-zeroes/|
+|214|Shortest Palindrome|https://leetcode.com/problems/shortest-palindrome/|
+|98|Validate Binary Search Tree|https://leetcode.com/problems/validate-binary-search-tree/|
+|155|Min Stack|https://leetcode.com/problems/min-stack/|
+|430|Flatten a Multilevel Doubly Linked List|https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/|
+|387|First Unique Character in a String|https://leetcode.com/problems/first-unique-character-in-a-string/|
+|463|Island Perimeter|https://leetcode.com/problems/island-perimeter/|
+|114|Flatten Binary Tree to Linked List|https://leetcode.com/problems/flatten-binary-tree-to-linked-list/|
+|23|Merge k Sorted Lists|https://leetcode.com/problems/merge-k-sorted-lists/|
+|394|Decode String|https://leetcode.com/problems/decode-string/|
+|390|Elimination Game|https://leetcode.com/problems/elimination-game/|
+|269|Alien Dictionary|https://www.lintcode.com/problem/alien-dictionary/description|
+|797|All Paths From Source to Target|https://leetcode.com/problems/all-paths-from-source-to-target/|
+|3|Longest Substring Without Repeating Characters|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
+|50|Pow(x, n)|https://leetcode.com/problems/powx-n/|
+|346|Moving Average from Data Stream|https://www.lintcode.com/problem/moving-average-from-data-stream/description|
+|347|Top K Frequent Elements|https://leetcode.com/problems/top-k-frequent-elements/|
+|242|Valid Anagram|https://leetcode.com/problems/valid-anagram/|
+|206|Reverse Linked List|https://leetcode.com/problems/reverse-linked-list/|
+|628|Maximum Product of Three Numbers|https://leetcode.com/problems/maximum-product-of-three-numbers/|
+|239|Sliding Window Maximum|https://leetcode.com/problems/sliding-window-maximum/|
+|295|Find Median from Data Stream|https://www.lintcode.com/problem/find-median-from-data-stream/description|
+|692|Top K Frequent Words|https://leetcode.com/problems/top-k-frequent-words/|
+|7|Reverse Integer|https://leetcode.com/problems/reverse-integer/|
+|69|Sqrt(x)|https://leetcode.com/problems/sqrtx/|
+|271|Encode and Decode Strings|https://www.lintcode.com/problem/encode-and-decode-strings/description|
+|33|Search in Rotated Sorted Array|https://leetcode.com/problems/search-in-rotated-sorted-array/|
+|498|Diagonal Traverse|https://leetcode.com/problems/diagonal-traverse/|
+|554|Brick Wall|https://leetcode.com/problems/brick-wall/|
+|62|Unique Paths|https://leetcode.com/problems/unique-paths/|
+|236|Lowest Common Ancestor of a Binary Tree|https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/|
+|139|Word Break|https://leetcode.com/problems/word-break/|
+|151|Reverse Words in a String|https://leetcode.com/problems/reverse-words-in-a-string/|
+|122|Best Time to Buy and Sell Stock II|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/|
+|301|Remove Invalid Parentheses|https://leetcode.com/problems/remove-invalid-parentheses/|
+|160|Intersection of Two Linked Lists|https://leetcode.com/problems/intersection-of-two-linked-lists/|
+
+
+
+
+|172|Factorial Trailing Zeroes|https://leetcode.com/problems/factorial-trailing-zeroes/|
+|437|Path Sum III|https://leetcode.com/problems/path-sum-iii/|
+|438|Find All Anagrams in a String|https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+
+
+
 
 
 </details>
