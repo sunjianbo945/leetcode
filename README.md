@@ -519,16 +519,15 @@ Permutations|
 </details>
 
 <details>
-    <summary>jiuzhang - 2019.09.30</summary>
-        <details>
-            <summary> Binary Search </summary>
-        
-            |Question |Link|
-            |---------------|-------------|
-            |70. Climbing Stairs|https://leetcode.com/problems/climbing-stairs/|
-            
-        </details>
-</details>
+<summary>jiuzhang - 2019.09.30</summary><blockquote>
+<details><summary> Binary Search </summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|70. Climbing Stairs|https://leetcode.com/problems/climbing-stairs/|
+
+</blockquote></details>
+</blockquote></details>
 
 
 
