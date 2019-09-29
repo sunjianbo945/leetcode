@@ -398,11 +398,134 @@ Permutations|
 |146. LRU Cache|https://leetcode.com/problems/lru-cache/|
 |547. Friend Circles|https://leetcode.com/problems/friend-circles/|
 |380. Insert Delete GetRandom O(1)|https://leetcode.com/problems/insert-delete-getrandom-o1/|
-
-
+|206. Reverse Linked List|https://leetcode.com/problems/reverse-linked-list/|
+|1. Two Sum|https://leetcode.com/problems/two-sum/|
+|4. Median of Two Sorted Arrays|https://leetcode.com/problems/median-of-two-sorted-arrays/|
+|349. Intersection of Two Arrays|https://leetcode.com/problems/intersection-of-two-arrays/|
+|123. Best Time to Buy and Sell Stock III|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/|
+|53. Maximum Subarray|https://leetcode.com/problems/maximum-subarray/|
+|44. Wildcard Matching|https://leetcode.com/problems/wildcard-matching/|
+|342. Power of Four|https://leetcode.com/problems/power-of-four/|
+|10. Regular Expression Matching|https://leetcode.com/problems/regular-expression-matching/|
+|289. Game of Life|https://leetcode.com/problems/game-of-life/|
+|528. Random Pick with Weight|https://leetcode.com/problems/random-pick-with-weight/|
+|918. Maximum Sum Circular Subarray|https://leetcode.com/problems/maximum-sum-circular-subarray/|
+|1048. Longest String Chain|https://leetcode.com/problems/longest-string-chain/|
+|1186. Maximum Subarray Sum with One Deletion|https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/|
 
 
 </details>
+
+
+<details>
+<summary>Citadel - 2019.09.30</summary>
+
+|Question |Link|
+|---------------|-------------|
+|188. Best Time to Buy and Sell Stock IV|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/|
+|121. Best Time to Buy and Sell Stock|https://leetcode.com/problems/best-time-to-buy-and-sell-stock/|
+|105. Construct Binary Tree from Preorder and Inorder Traversal|https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/|
+|122. Best Time to Buy and Sell Stock II|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/|
+|718. Maximum Length of Repeated Subarray|https://leetcode.com/problems/maximum-length-of-repeated-subarray/|
+|53. Maximum Subarray|https://leetcode.com/problems/maximum-subarray/|
+|239. Sliding Window Maximum|https://leetcode.com/problems/sliding-window-maximum/|
+|200. Number of Islands|https://leetcode.com/problems/number-of-islands/|
+|102. Binary Tree Level Order Traversal|https://leetcode.com/problems/binary-tree-level-order-traversal/|
+|199. Binary Tree Right Side View|https://leetcode.com/problems/binary-tree-right-side-view/|
+|647. Palindromic Substrings|https://leetcode.com/problems/palindromic-substrings/|
+|42. Trapping Rain Water|https://leetcode.com/problems/trapping-rain-water/|
+|240. Search a 2D Matrix II|https://leetcode.com/problems/search-a-2d-matrix-ii/|
+|32. Longest Valid Parentheses|https://leetcode.com/problems/longest-valid-parentheses/|
+|20. Valid Parentheses|https://leetcode.com/problems/valid-parentheses/|
+|1048. Longest String Chain|https://leetcode.com/problems/longest-string-chain/|
+
+</details>
+
+<details>
+<summary>Goldman - 2019.09.30</summary>
+
+|Question |Link|
+|---------------|-------------|
+|70. Climbing Stairs|https://leetcode.com/problems/climbing-stairs/|
+|722. Remove Comments|https://leetcode.com/problems/remove-comments/|
+|42. Trapping Rain Water|https://leetcode.com/problems/trapping-rain-water/|
+|209. Minimum Size Subarray Sum|https://leetcode.com/problems/minimum-size-subarray-sum/|
+|688. Knight Probability in Chessboard|https://leetcode.com/problems/knight-probability-in-chessboard/|
+|4. Median of Two Sorted Arrays|https://leetcode.com/problems/median-of-two-sorted-arrays/|
+|387. First Unique Character in a String|https://leetcode.com/problems/first-unique-character-in-a-string/|
+|862. Shortest Subarray with Sum at Least K|https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/|
+|443. String Compression|https://leetcode.com/problems/string-compression/|
+|49. Group Anagrams|https://leetcode.com/problems/group-anagrams/|
+|1. Two Sum|https://leetcode.com/problems/two-sum/|
+|289. Game of Life|https://leetcode.com/problems/game-of-life/|
+|121. Best Time to Buy and Sell Stock|https://leetcode.com/problems/best-time-to-buy-and-sell-stock/|
+|706. Design HashMap|https://leetcode.com/problems/design-hashmap/|
+|1086. High Five|?|
+|592. Fraction Addition and Subtraction|https://leetcode.com/problems/fraction-addition-and-subtraction/|
+|153. Find Minimum in Rotated Sorted Array|https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/|
+|8. String to Integer (atoi)|https://leetcode.com/problems/string-to-integer-atoi/|
+|146. LRU Cache|https://leetcode.com/problems/lru-cache/|
+|11. Container With Most Water|https://leetcode.com/problems/container-with-most-water/|
+|238. Product of Array Except Self|https://leetcode.com/problems/product-of-array-except-self/|
+|64. Minimum Path Sum|https://leetcode.com/problems/minimum-path-sum/|
+|1010. Pairs of Songs With Total Durations Divisible by 60|https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/|
+|166. Fraction to Recurring Decimal|https://leetcode.com/problems/fraction-to-recurring-decimal/|
+|931. Minimum Falling Path Sum|https://leetcode.com/problems/minimum-falling-path-sum/|
+|54. Spiral Matrix|https://leetcode.com/problems/spiral-matrix/|
+|141. Linked List Cycle|https://leetcode.com/problems/linked-list-cycle/|
+|119. Pascal's Triangle II|https://leetcode.com/problems/pascals-triangle-ii/|
+|657. Robot Return to Origin|https://leetcode.com/problems/robot-return-to-origin/|
+|215. Kth Largest Element in an Array|https://leetcode.com/problems/kth-largest-element-in-an-array/|
+|122. Best Time to Buy and Sell Stock II|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/|
+|240. Search a 2D Matrix II|https://leetcode.com/problems/search-a-2d-matrix-ii/|
+|218. The Skyline Problem|https://leetcode.com/problems/the-skyline-problem/|
+|311. Sparse Matrix Multiplication|https://www.lintcode.com/problem/sparse-matrix-multiplication/description|
+|200. Number of Islands|https://leetcode.com/problems/number-of-islands/|
+|344. Reverse String|https://leetcode.com/problems/reverse-string/|
+|56. Merge Intervals|https://leetcode.com/problems/merge-intervals/|
+|457. Circular Array Loop|https://leetcode.com/problems/circular-array-loop/|
+|242. Valid Anagram|https://leetcode.com/problems/valid-anagram/|
+|155. Min Stack|https://leetcode.com/problems/min-stack/|
+|50. Pow(x, n)|https://leetcode.com/problems/powx-n/|
+|151. Reverse Words in a String|https://leetcode.com/problems/reverse-words-in-a-string/|
+|62. Unique Paths|https://leetcode.com/problems/unique-paths/|
+|322. Coin Change|https://leetcode.com/problems/coin-change/|
+|206. Reverse Linked List|https://leetcode.com/problems/reverse-linked-list/|
+|78. Subsets|https://leetcode.com/problems/subsets/|
+|33. Search in Rotated Sorted Array|https://leetcode.com/problems/search-in-rotated-sorted-array/|
+|3. Longest Substring Without Repeating Characters|https://leetcode.com/problems/longest-substring-without-repeating-characters/|
+|295. Find Median from Data Stream|https://leetcode.com/problems/find-median-from-data-stream/|
+|118. Pascal's Triangle|https://leetcode.com/problems/pascals-triangle/|
+|44. Wildcard Matching|https://leetcode.com/problems/wildcard-matching/|
+|111. Minimum Depth of Binary Tree|https://leetcode.com/problems/minimum-depth-of-binary-tree/|
+|207. Course Schedule|https://leetcode.com/problems/course-schedule/|
+|560. Subarray Sum Equals K|https://leetcode.com/problems/subarray-sum-equals-k/|
+|45. Jump Game II|https://leetcode.com/problems/jump-game-ii/|
+|380. Insert Delete GetRandom O(1)|https://leetcode.com/problems/insert-delete-getrandom-o1/|
+|167. Two Sum II - Input array is sorted|https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/|
+|628. Maximum Product of Three Numbers|https://leetcode.com/problems/maximum-product-of-three-numbers/|
+|20. Valid Parentheses|https://leetcode.com/problems/valid-parentheses/|
+|9. Palindrome Number|https://leetcode.com/problems/palindrome-number/|
+|283. Move Zeroes|https://leetcode.com/problems/palindrome-number/|
+|98. Validate Binary Search Tree|https://leetcode.com/problems/validate-binary-search-tree/|
+|236. Lowest Common Ancestor of a Binary Tree|https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/|
+|63. Unique Paths II|https://leetcode.com/problems/unique-paths-ii/|
+|16. 3Sum Closest|https://leetcode.com/problems/3sum-closest/|
+|39. Combination Sum|https://leetcode.com/problems/combination-sum/|
+|1109. Corporate Flight Bookings|https://leetcode.com/problems/corporate-flight-bookings/|
+|1116. Print Zero Even Odd|https://leetcode.com/problems/print-zero-even-odd/|
+
+
+</details>
+
+
+
+
+
+
+
+
+
 
 
 
