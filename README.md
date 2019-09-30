@@ -524,7 +524,16 @@ Permutations|
 
 |Question |Link|
 |---------------|-------------|
-|70. Climbing Stairs|https://leetcode.com/problems/climbing-stairs/|
+|459. Closest Number in Sorted Array|https://www.cnblogs.com/lz87/p/7494153.html|
+|458. Last Position of Target|http://www.haobanfa.info/lintcode-458-last-position-target-%E5%8E%9F%E5%88%9Bjava%E5%8F%82%E8%80%83%E8%A7%A3%E7%AD%94/
+|28. Search a 2D Matrix|https://www.lintcode.com/problem/search-a-2d-matrix/description|
+|585. Maximum Number in Mountain Sequence|https://www.lintcode.com/problem/maximum-number-in-mountain-sequence/description|
+|447. Search in a Big Sorted Array|https://yeqiuquan.blogspot.com/2016/03/search-in-big-sorted-array.html|
+|159. Find Minimum in Rotated Sorted Array|https://www.lintcode.com/problem/find-minimum-in-rotated-sorted-array/description|
+|75. Find Peak Element|https://www.lintcode.com/problem/find-peak-element/description|
+|74. First Bad Version|https://www.lintcode.com/problem/first-bad-version/description|
+|62. Search in Rotated Sorted Array|https://www.lintcode.com/problem/search-in-rotated-sorted-array/description|
+
 
 </blockquote></details>
 </blockquote></details>
