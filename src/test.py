@@ -65,27 +65,35 @@ import ctypes
 import gc
 
 
-class Solution:
-    """
-    @param nums: A list of integers
-    @return: A list of integers includes the index of the first number and the index of the last number
-    """
+# class Solution:
+#     """
+#     @param nums: A list of integers
+#     @return: A list of integers includes the index of the first number and the index of the last number
+#     """
+#
+#     def subarraySum(self, nums):
+#         # write your code here
+#         if not nums: return []
+#
+#         cache = {}
+#         presume = 0
+#
+#         for i in range(len(nums)):
+#             presume += nums[i]
+#             if presume in cache:
+#                 return [cache[presume]+1, i]
+#             else:
+#                 cache[presume] = i
+#
+#         return []
 
-    def subarraySum(self, nums):
-        # write your code here
-        if not nums: return []
 
-        cache = {}
-        presume = 0
 
-        for i in range(len(nums)):
-            presume += nums[i]
-            if presume in cache:
-                return [cache[presume]+1, i]
-            else:
-                cache[presume] = i
+# if __name__=='__main__':
+#     print(Solution().subarraySum([-3,1,2,-3,4]))
 
-        return []
+res =[]
+for i in range(10):
+    res.append(i)
 
-if __name__=='__main__':
-    print(Solution().subarraySum([-3,1,2,-3,4]))
+    

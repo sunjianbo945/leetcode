@@ -534,8 +534,17 @@ Permutations|
 |74. First Bad Version|https://www.lintcode.com/problem/first-bad-version/description|
 |62. Search in Rotated Sorted Array|https://www.lintcode.com/problem/search-in-rotated-sorted-array/description|
 
+</blockquote></details>
+
+<details><summary> Tree </summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|97. Maximum Depth of Binary Tree|https://www.lintcode.com/problem/maximum-depth-of-binary-tree/description|
+
 
 </blockquote></details>
+
 </blockquote></details>
 
 
