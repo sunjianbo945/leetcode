@@ -546,6 +546,9 @@ Permutations|
 |112. Path Sum|https://leetcode.com/problems/path-sum/|
 |94. Binary Tree Maximum Path Sum|https://www.lintcode.com/problem/binary-tree-maximum-path-sum/description|
 |95. Validate Binary Search Tree|https://www.lintcode.com/problem/validate-binary-search-tree/description|
+|86. Binary Search Tree Iterator|https://www.lintcode.com/problem/binary-search-tree-iterator/description|
+|69. Binary Tree Level Order Traversal|https://www.lintcode.com/problem/binary-tree-level-order-traversal/description|
+
 
 
 </blockquote></details>
