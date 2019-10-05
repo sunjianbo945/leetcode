@@ -41,15 +41,19 @@
 # ａ=1+2
 # print(a)
 
-# def fun(num):
-#     num = 5
-#
-# def fun2():
-#     num= 2
-#     fun(num)
-#     print(num)
-#
-# fun2()
+# fun2: num -> 2
+# fun: num -> 同一个２
+# fun: num -> 5
+
+def fun(num):
+    num = 5
+
+def fun2():
+    num= 2
+    fun(num)
+    print(num)
+
+fun2()
 
 # def fun(lst1):
 #     lst1.append(1)

@@ -541,6 +541,11 @@ Permutations|
 |Question |Link|
 |---------------|-------------|
 |97. Maximum Depth of Binary Tree|https://www.lintcode.com/problem/maximum-depth-of-binary-tree/description|
+|93. Balanced Binary Tree|https://www.lintcode.com/problem/balanced-binary-tree/description|
+|878. Boundary of Binary Tree|https://www.lintcode.com/problem/boundary-of-binary-tree/description|
+|112. Path Sum|https://leetcode.com/problems/path-sum/|
+|94. Binary Tree Maximum Path Sum|https://www.lintcode.com/problem/binary-tree-maximum-path-sum/description|
+|95. Validate Binary Search Tree|https://www.lintcode.com/problem/validate-binary-search-tree/description|
 
 
 </blockquote></details>
