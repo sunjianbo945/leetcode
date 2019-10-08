@@ -544,14 +544,22 @@ Permutations|
 |93. Balanced Binary Tree|https://www.lintcode.com/problem/balanced-binary-tree/description|
 |480. Binary Tree Paths|https://www.lintcode.com/problem/binary-tree-paths/description|
 |376. Binary Tree Path Sum|https://www.lintcode.com/problem/binary-tree-path-sum/description|
+|596. Minimum Subtree|https://www.lintcode.com/problem/minimum-subtree/description|
 |112. Path Sum|https://leetcode.com/problems/path-sum/|
 |94. Binary Tree Maximum Path Sum|https://www.lintcode.com/problem/binary-tree-maximum-path-sum/description|
 |95. Validate Binary Search Tree|https://www.lintcode.com/problem/validate-binary-search-tree/description|
 |86. Binary Search Tree Iterator|https://www.lintcode.com/problem/binary-search-tree-iterator/description|
 |69. Binary Tree Level Order Traversal|https://www.lintcode.com/problem/binary-tree-level-order-traversal/description|
-|[LintCode] 597 Subtree with Maximum Average|src/JiuZhangSuanFa/Tree/597/|
-|878. Boundary of Binary Tree|https://www.lintcode.com/problem/boundary-of-binary-tree/description|
+|597 Subtree with Maximum Average|src/JiuZhangSuanFa/Tree/597/|
+|88. Lowest Common Ancestor of a Binary Tree|https://www.lintcode.com/problem/lowest-common-ancestor-of-a-binary-tree/description|
+|474. Lowest Common Ancestor II|https://www.lintcode.com/problem/lowest-common-ancestor-ii/description|
+|578. Lowest Common Ancestor III|https://www.lintcode.com/problem/lowest-common-ancestor-iii/description|
+|1534. Convert Binary Search Tree to Sorted Doubly Linked List|https://www.lintcode.com/problem/convert-binary-search-tree-to-sorted-doubly-linked-list/description|
+|453. Flatten Binary Tree to Linked List|https://www.lintcode.com/problem/flatten-binary-tree-to-linked-list/description|
 
+
+
+|878. Boundary of Binary Tree|https://www.lintcode.com/problem/boundary-of-binary-tree/description|
 
 
 </blockquote></details>
