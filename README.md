@@ -556,9 +556,10 @@ Permutations|
 |578. Lowest Common Ancestor III|https://www.lintcode.com/problem/lowest-common-ancestor-iii/description|
 |1534. Convert Binary Search Tree to Sorted Doubly Linked List|https://www.lintcode.com/problem/convert-binary-search-tree-to-sorted-doubly-linked-list/description|
 |453. Flatten Binary Tree to Linked List|https://www.lintcode.com/problem/flatten-binary-tree-to-linked-list/description|
-
-
-
+|448. Inorder Successor in BST|https://www.lintcode.com/problem/inorder-successor-in-bst/description|
+|11. Search Range in Binary Search Tree|https://www.lintcode.com/problem/search-range-in-binary-search-tree/description|
+|85. Insert Node in a Binary Search Tree|https://www.lintcode.com/problem/insert-node-in-a-binary-search-tree/description|
+|87. Remove Node in Binary Search Tree|https://www.lintcode.com/problem/remove-node-in-binary-search-tree/description|
 |878. Boundary of Binary Tree|https://www.lintcode.com/problem/boundary-of-binary-tree/description|
 
 
