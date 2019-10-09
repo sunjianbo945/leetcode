@@ -524,6 +524,7 @@ Permutations|
 
 |Question |Link|
 |---------------|-------------|
+|457. Classical Binary Search|https://www.lintcode.com/problem/classical-binary-search/description|
 |459. Closest Number in Sorted Array|https://www.cnblogs.com/lz87/p/7494153.html|
 |458. Last Position of Target|http://www.haobanfa.info/lintcode-458-last-position-target-%E5%8E%9F%E5%88%9Bjava%E5%8F%82%E8%80%83%E8%A7%A3%E7%AD%94/
 |28. Search a 2D Matrix|https://www.lintcode.com/problem/search-a-2d-matrix/description|
@@ -549,7 +550,6 @@ Permutations|
 |94. Binary Tree Maximum Path Sum|https://www.lintcode.com/problem/binary-tree-maximum-path-sum/description|
 |95. Validate Binary Search Tree|https://www.lintcode.com/problem/validate-binary-search-tree/description|
 |86. Binary Search Tree Iterator|https://www.lintcode.com/problem/binary-search-tree-iterator/description|
-|69. Binary Tree Level Order Traversal|https://www.lintcode.com/problem/binary-tree-level-order-traversal/description|
 |597 Subtree with Maximum Average|src/JiuZhangSuanFa/Tree/597/|
 |88. Lowest Common Ancestor of a Binary Tree|https://www.lintcode.com/problem/lowest-common-ancestor-of-a-binary-tree/description|
 |474. Lowest Common Ancestor II|https://www.lintcode.com/problem/lowest-common-ancestor-ii/description|
@@ -561,6 +561,24 @@ Permutations|
 |85. Insert Node in a Binary Search Tree|https://www.lintcode.com/problem/insert-node-in-a-binary-search-tree/description|
 |87. Remove Node in Binary Search Tree|https://www.lintcode.com/problem/remove-node-in-binary-search-tree/description|
 |878. Boundary of Binary Tree|https://www.lintcode.com/problem/boundary-of-binary-tree/description|
+
+
+</blockquote></details>
+
+
+<details><summary>Breath First Search </summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|69. Binary Tree Level Order Traversal|https://www.lintcode.com/problem/binary-tree-level-order-traversal/description|
+|7. Serialize and Deserialize Binary Tree|https://www.lintcode.com/problem/binary-tree-serialization/|
+|70. Binary Tree Level Order Traversal II|https://www.lintcode.com/problem/binary-tree-level-order-traversal-ii/description|
+|71. Binary Tree Zigzag Level Order Traversal|https://www.lintcode.com/problem/binary-tree-zigzag-level-order-traversal/description|
+|242. Convert Binary Tree to Linked Lists by Depth|https://www.lintcode.com/problem/convert-binary-tree-to-linked-lists-by-depth/description|
+|178. Graph Valid Tree|https://www.lintcode.com/problem/graph-valid-tree/description|
+|137. Clone Graph|https://www.lintcode.com/problem/clone-graph/description|
+|618 Search Graph Nodes|https://yeqiuquan.blogspot.com/2017/03/lintcode-618-search-graph-nodes.html|
+|127. Topological Sorting|https://www.lintcode.com/problem/topological-sorting/description|
 
 
 </blockquote></details>
