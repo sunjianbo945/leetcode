@@ -579,6 +579,13 @@ Permutations|
 |137. Clone Graph|https://www.lintcode.com/problem/clone-graph/description|
 |618 Search Graph Nodes|https://yeqiuquan.blogspot.com/2017/03/lintcode-618-search-graph-nodes.html|
 |127. Topological Sorting|https://www.lintcode.com/problem/topological-sorting/description|
+|615. Course Schedule|https://www.lintcode.com/problem/course-schedule/description|
+|210. Course Schedule II|https://leetcode.com/problems/course-schedule-ii/|
+|605. Sequence Reconstruction|https://www.lintcode.com/problem/sequence-reconstruction/description|
+|433. Number of Islands|https://www.lintcode.com/problem/number-of-islands/description|
+|598. Zombie in Matrix|https://yeqiuquan.blogspot.com/2017/03/lintcode-598-zombie-in-matrix.html|
+|611. Knight Shortest Path|https://yeqiuquan.blogspot.com/2017/03/lintcode-611-knight-shortest-path.html|
+|431. Connected Component in Undirected Graph(union find)|https://yeqiuquan.blogspot.com/2017/03/lintcode-432-find-weak-connected.html|
 
 
 </blockquote></details>
