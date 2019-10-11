@@ -597,6 +597,16 @@ Permutations|
 |Question |Link|
 |---------------|-------------|
 |17. Subsets|https://www.lintcode.com/problem/subsets/description|
+|135. Combination Sum|https://www.lintcode.com/problem/combination-sum/description|
+|153. Combination Sum II|https://www.lintcode.com/problem/combination-sum-ii/description|
+|136. Palindrome Partitioning|https://www.lintcode.com/problem/palindrome-partitioning/description|
+|15. Permutations|https://www.lintcode.com/problem/permutations/description|
+|16. Permutations II|https://www.lintcode.com/problem/permutations-ii/|
+|33. N-Queens|https://www.lintcode.com/problem/n-queens/description|
+|121. Word Ladder II|https://www.lintcode.com/problem/word-ladder-ii/description|
+
+
+
 
 </blockquote></details>
 
