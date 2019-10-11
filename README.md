@@ -585,8 +585,18 @@ Permutations|
 |433. Number of Islands|https://www.lintcode.com/problem/number-of-islands/description|
 |598. Zombie in Matrix|https://yeqiuquan.blogspot.com/2017/03/lintcode-598-zombie-in-matrix.html|
 |611. Knight Shortest Path|https://yeqiuquan.blogspot.com/2017/03/lintcode-611-knight-shortest-path.html|
-|431. Connected Component in Undirected Graph(union find)|https://yeqiuquan.blogspot.com/2017/03/lintcode-432-find-weak-connected.html|
+|431. Connected Component in Undirected Graph(union find -> not solve)|https://yeqiuquan.blogspot.com/2017/03/lintcode-432-find-weak-connected.html|
+|600. Smallest Rectangle Enclosing Black Pixels|https://www.lintcode.com/problem/smallest-rectangle-enclosing-black-pixels/description|
+|120. Word Ladder|https://www.lintcode.com/problem/word-ladder/description|
+|573. Build Post Office II|https://www.lintcode.com/problem/build-post-office-ii/description|
 
+</blockquote></details>
+
+<details><summary>Depth First Search </summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|17. Subsets|https://www.lintcode.com/problem/subsets/description|
 
 </blockquote></details>
 
