@@ -537,7 +537,7 @@ Permutations|
 
 </blockquote></details>
 
-<details><summary> Tree </summary><blockquote>
+<details><summary>Tree</summary><blockquote>
 
 |Question |Link|
 |---------------|-------------|
@@ -566,7 +566,7 @@ Permutations|
 </blockquote></details>
 
 
-<details><summary>Breath First Search </summary><blockquote>
+<details><summary>Breath First Search</summary><blockquote>
 
 |Question |Link|
 |---------------|-------------|
@@ -592,7 +592,7 @@ Permutations|
 
 </blockquote></details>
 
-<details><summary>Depth First Search </summary><blockquote>
+<details><summary>Depth First Search</summary><blockquote>
 
 |Question |Link|
 |---------------|-------------|
@@ -605,7 +605,20 @@ Permutations|
 |33. N-Queens|https://www.lintcode.com/problem/n-queens/description|
 |121. Word Ladder II|https://www.lintcode.com/problem/word-ladder-ii/description|
 
+</blockquote></details>
 
+<details><summary>List and Array</summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|35. Reverse Linked List|https://www.lintcode.com/problem/reverse-linked-list/description|
+|450. Reverse Nodes in k-Group|https://www.lintcode.com/problem/reverse-nodes-in-k-group/description|
+|96. Partition List|https://www.lintcode.com/problem/partition-list/description|
+|165. Merge Two Sorted Lists|https://www.lintcode.com/problem/merge-two-sorted-lists/description|
+|36. Reverse Linked List II|https://www.lintcode.com/problem/reverse-linked-list-ii/description|
+|511. Swap Two Nodes in Linked List|https://www.lintcode.com/problem/swap-two-nodes-in-linked-list/description|
+|99. Reorder List|https://www.lintcode.com/problem/reorder-list/description|
+|170. Rotate List|https://www.lintcode.com/problem/rotate-list/description|
 
 
 </blockquote></details>

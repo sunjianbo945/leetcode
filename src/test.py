@@ -1,99 +1,38 @@
-
-# def fun1():
-#     l=3
-#     fun2(l)
-#     print(l) # 3
-#
-# def fun2(a):
-#     a=5
-
-# def fun1():
-#     l=[]
-#     fun2(l)
-#     print(l) # [1]
-#
-# def fun2(a):
-#     a.append(1)
+google_news_url = "https://news.google.com/news/rss"
+import requests
 
 
-# def fun1():
-#     l=[3]
-#     fun2(l)
-#     print(l) # [3, 1]
-#
-# def fun2(a):
-#     a.append(1)
+def get_headlines(rss_url):
+    """
+    @returns a list of titles from the rss feed located at `rss_url`
+    """
+    response = requests.get(rss_url)
 
-# def fun1():
-#     l=[]
-#     fun2(l)
-#     print(l) # []
-#
-# def fun2(a):
-#     a=[3]
+    if response.status_code != 200:
+        raise Exception(f'request has eroor {rss_url} can not get response with error code {response.status_code}')
 
-#
-# def fun1():
-#     l=[3]
-#     fun2(l)
-#     print(l) # [3]
-#
-# def fun2(a):
-#     a=[7,1]
+    content = response.text
+    res = []
+    for index, value in enumerate(content):
 
-# def fun():
-#     l = [1,2,3]
-#     #print(hex(id(l)))
-#     fun2(l)
-#     print(l)
-#
-#
-# def fun2(m):
-#     ret = []
-#     for i in m:
-#         ret.append((i))
-#     m=ret
-#     # m = list(m)
-#     #print(hex(id(m)))
-#     m.append(4)
-#     print('m is {}'.format(m))
+        if value == '<' and index + 7 <= len(content) and content[index:index + 7] == '<title>':
+            title = extract_title(content, index + 7)
+            res.append(title)
+
+    return res[1:]
 
 
-# def fun():
-#     return [i for i in range(5)]
-import ctypes
-import gc
+def extract_title(content, index):
+    if index >= len(content):
+        return ''
+
+    res = ''
+    for i in range(index, len(content)):
+        if content[i] == '<' and i + 8 <= len(content) and content[i:i + 8] == '</title>':
+            return res
+        res += content[i]
+
+    return res
 
 
-# class Solution:
-#     """
-#     @param nums: A list of integers
-#     @return: A list of integers includes the index of the first number and the index of the last number
-#     """
-#
-#     def subarraySum(self, nums):
-#         # write your code here
-#         if not nums: return []
-#
-#         cache = {}
-#         presume = 0
-#
-#         for i in range(len(nums)):
-#             presume += nums[i]
-#             if presume in cache:
-#                 return [cache[presume]+1, i]
-#             else:
-#                 cache[presume] = i
-#
-#         return []
-
-
-
-# if __name__=='__main__':
-#     print(Solution().subarraySum([-3,1,2,-3,4]))
-
-res =[]
-for i in range(10):
-    res.append(i)
-
-    
+print(get_headlines(google_news_url))
