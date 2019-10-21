@@ -619,6 +619,11 @@ Permutations|
 |511. Swap Two Nodes in Linked List|https://www.lintcode.com/problem/swap-two-nodes-in-linked-list/description|
 |99. Reorder List|https://www.lintcode.com/problem/reorder-list/description|
 |170. Rotate List|https://www.lintcode.com/problem/rotate-list/description|
+|6. Merge Two Sorted Arrays|https://www.lintcode.com/problem/merge-two-sorted-arrays/description|
+|64. Merge Sorted Array|https://www.lintcode.com/problem/merge-sorted-array/description|
+|547. Intersection of Two Arrays|https://www.lintcode.com/problem/intersection-of-two-arrays/description|
+|41. Maximum Subarray|https://www.lintcode.com/problem/maximum-subarray/description|
+|139. Subarray Sum Closest|https://www.lintcode.com/problem/subarray-sum-closest/description|
 
 
 </blockquote></details>
