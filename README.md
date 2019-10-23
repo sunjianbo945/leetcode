@@ -628,6 +628,40 @@ Permutations|
 
 </blockquote></details>
 
+<details><summary>List and Array</summary><blockquote>
+
+|Question |Link|
+|---------------|-------------|
+|604. Window Sum|https://www.lintcode.com/problem/window-sum/description|
+|539. Move Zeroes|https://www.lintcode.com/problem/move-zeroes/description|
+|100. Remove Duplicates from Sorted Array|https://www.lintcode.com/problem/remove-duplicates-from-sorted-array/description|
+|415. Valid Palindrome|https://www.lintcode.com/problem/valid-palindrome/description|
+|8. Rotate String|https://www.lintcode.com/problem/rotate-string/description|
+|39. Recover Rotated Sorted Array|https://www.lintcode.com/problem/recover-rotated-sorted-array/description|
+|56. Two Sum|https://www.lintcode.com/problem/two-sum/description|
+|607. Two Sum III - Data structure design|https://www.lintcode.com/problem/two-sum-iii-data-structure-design/description|
+|608. Two Sum II - Input array is sorted|https://www.lintcode.com/problem/two-sum-ii-input-array-is-sorted/description|
+|Two Sum - Unique pairs|https://yeqiuquan.blogspot.com/2017/04/lintcode-587-two-sum-unique-pairs.html|
+|57. 3Sum|https://www.lintcode.com/problem/3sum/description|
+|382. Triangle Count|https://www.lintcode.com/problem/triangle-count/description|
+|609 Two Sum - Less than or equal to target|https://yeqiuquan.blogspot.com/2017/04/lintcode-609-two-sum-less-than-or-equal.html|
+|533 Two Sum - Closest to target|https://yeqiuquan.blogspot.com/2017/04/lintcode-533-two-sum-closest-to-target.html|
+|59. 3Sum Closest|https://www.lintcode.com/problem/3sum-closest/|
+|58. 4Sum|https://www.lintcode.com/problem/4sum/description|
+|610 Two Sum - Difference equals to target|https://yeqiuquan.blogspot.com/2017/04/lintcode-610-two-sum-difference-equals.html|
+|31. Partition Array|https://www.lintcode.com/problem/partition-array/description|
+|461 Kth Smallest Numbers in Unsorted Array|https://yeqiuquan.blogspot.com/2017/03/lintcode-461-kth-smallest-numbers-in.html|
+|5. Kth Largest Element|https://www.lintcode.com/problem/kth-largest-element/description|
+
+
+
+</blockquote></details>
+
+
+
+
+
+
 </blockquote></details>
 
 
