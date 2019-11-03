@@ -37,8 +37,34 @@ import requests
 #
 # print(get_headlines(google_news_url))
 
-total =1
-for i in range(1,21):
-    total*=i
+# def s(A):
+#
+#     temp = find_min(A)
+#
+#     res = 1
+#
+#     for i in range(1,len(temp)):
+#         if temp[i]!=temp[i-1]:
+#             res+=1
+#
+#     return res
+#
+#
+# def find_min(A):
+#     res = [len(A) - 1] * len(A)
+#
+#     min_num = A[-1]
+#
+#     for i in range(len(A) - 2, -1, -1):
+#
+#         if A[i] < min_num:
+#             res[i] = i
+#             min_num = A[i]
+#         else:
+#             res[i] = res[i + 1]
+#
+#     return res
+#
+# print(s([2, 4, 1, 6, 5, 9, 7]))
 
-print(total)
+

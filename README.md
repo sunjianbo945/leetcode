@@ -442,6 +442,37 @@ Permutations|
 </details>
 
 <details>
+<summary>Amazon - 2019.09.30</summary>
+
+|Question |Link|
+|---------------|-------------|
+|1. Two Sum|https://leetcode.com/problems/two-sum/|
+|2. Add Two Numbers|https://leetcode.com/problems/add-two-numbers/|
+|146. LRU Cache|https://leetcode.com/problems/lru-cache/|
+|5. Longest Palindromic Substring|https://leetcode.com/problems/longest-palindromic-substring/|
+|42. Trapping Rain Water|https://leetcode.com/problems/trapping-rain-water/|
+|200. Number of Islands|https://leetcode.com/problems/number-of-islands/|
+|15. 3Sum|https://leetcode.com/problems/3sum/|
+|21. Merge Two Sorted Lists|https://leetcode.com/problems/merge-two-sorted-lists/|
+|937. Reorder Data in Log Files|https://leetcode.com/problems/reorder-data-in-log-files/|
+|23. Merge k Sorted Lists|https://leetcode.com/problems/merge-k-sorted-lists/|
+|206. Reverse Linked List|https://leetcode.com/problems/reverse-linked-list/|
+|273. Integer to English Words|https://leetcode.com/problems/integer-to-english-words/|
+|297. Serialize and Deserialize Binary Tree|https://leetcode.com/problems/serialize-and-deserialize-binary-tree/|
+|919. Meeting Rooms II|https://www.lintcode.com/problem/meeting-rooms-ii/description|
+|973. K Closest Points to Origin|https://leetcode.com/problems/k-closest-points-to-origin/|
+|49. Group Anagrams|https://leetcode.com/problems/group-anagrams/|
+|138. Copy List with Random Pointer|https://leetcode.com/problems/copy-list-with-random-pointer/|
+|892. Alien Dictionary|https://www.lintcode.com/problem/alien-dictionary/description|
+|127. Word Ladder|https://leetcode.com/problems/word-ladder/|
+|139. Word Break|https://leetcode.com/problems/word-break/|
+
+
+
+</details>
+
+
+<details>
 <summary>Goldman - 2019.09.30</summary>
 
 |Question |Link|
