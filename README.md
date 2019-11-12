@@ -446,6 +446,8 @@ Permutations|
 
 |Question |Link|
 |---------------|-------------|
+|Q|https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions|
+|C|https://leetcode.com/problems/critical-connections-in-a-network/discuss/382632/Java-implementation-of-Tarjan-Algorithm-with-explanation|
 |1. Two Sum|https://leetcode.com/problems/two-sum/|
 |2. Add Two Numbers|https://leetcode.com/problems/add-two-numbers/|
 |146. LRU Cache|https://leetcode.com/problems/lru-cache/|
@@ -466,6 +468,17 @@ Permutations|
 |892. Alien Dictionary|https://www.lintcode.com/problem/alien-dictionary/description|
 |127. Word Ladder|https://leetcode.com/problems/word-ladder/|
 |139. Word Break|https://leetcode.com/problems/word-break/|
+|295. Find Median from Data Stream|https://leetcode.com/problems/find-median-from-data-stream/|
+|212. Word Search II|https://leetcode.com/problems/word-search-ii/|
+|124. Binary Tree Maximum Path Sum|https://leetcode.com/problems/binary-tree-maximum-path-sum/|
+|45. Jump Game II|https://leetcode.com/problems/jump-game-ii/|
+|55. Jump Game|https://leetcode.com/problems/jump-game/|
+|460. LFU Cache|https://leetcode.com/problems/lfu-cache/|
+|240. Search a 2D Matrix II|https://leetcode.com/problems/search-a-2d-matrix-ii/|
+|341. Flatten Nested List Iterator|https://leetcode.com/problems/flatten-nested-list-iterator/|
+|239. Sliding Window Maximum|https://leetcode.com/problems/sliding-window-maximum/|
+|746. Design Tic-Tac-Toe|https://www.lintcode.com/problem/design-tic-tac-toe/description|
+|126. Word Ladder II|https://leetcode.com/problems/word-ladder-ii/|
 
 
 
