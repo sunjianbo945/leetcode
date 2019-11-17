@@ -67,4 +67,97 @@ import requests
 #
 # print(s([2, 4, 1, 6, 5, 9, 7]))
 
+# !/bin/python3
 
+import sys
+
+
+# Complete the function below.
+class BlobFinder:
+
+    def __init__(self, blob):
+        self.blob = blob
+        self.top = 0
+        self.left = 0
+        self.right = len(blob[0])
+        self.bottom = len(blob)
+        self.totalRead = 0
+
+    def _findTop(self):
+
+        for i in range(self.bottom):
+            for j in range(self.left, self.right):
+                self.totalRead += 1
+                if self.blob[i][j] == 1:
+                    self.top = i
+                    self.left = j
+                    return i
+
+        return -1
+
+
+    def _findBottom(self):
+        for i in range(self.bottom - 1, -1, -1):
+            for j in range(self.right-1, self.left-1,-1):
+                self.totalRead += 1
+                if self.blob[i][j] == 1:
+                    self.right = j
+                    self.bottom = i
+                    return
+
+    def _findLeft(self):
+        most_left = self.right
+
+        for i in range(self.top+1, self.bottom ):
+            for j in range(most_left):
+                self.totalRead += 1
+                if self.blob[i][j] == 1:
+                    most_left = min(j, most_left)
+                    break
+
+        self.left = most_left
+        return most_left
+
+    def _findRight(self):
+        most_right = self.left
+
+        for i in range(self.top+1, self.bottom):
+            for j in range(self.right, most_right, -1):
+                self.totalRead += 1
+                if self.blob[i][j] == 1:
+                    most_right = max(j, most_right)
+                    break
+
+        self.right = most_right
+        return most_right
+
+    def findBoundary(self):
+        self._findTop()
+        self._findBottom()
+        self._findLeft()
+        self._findRight()
+
+
+def getBlobBoundaries(inputGrid):
+    finder = BlobFinder(inputGrid)
+    finder.findBoundary()
+
+    print('Cell Reads:{}'.format(finder.totalRead))
+    print('Top:{}'.format(finder.top))
+    print('Left:{}'.format(finder.left))
+    print('Right:{}'.format(finder.right))
+    print('Bottom:{}'.format(finder.bottom))
+
+
+if __name__ == "__main__":
+    inputGrid_rows = 0
+    inputGrid_cols = 0
+    inputGrid_rows = int(input())
+    inputGrid_cols = int(input())
+
+    inputGrid = []
+    for inputGrid_i in range(inputGrid_rows):
+        inputGrid_temp = [int(inputGrid_t) for inputGrid_t in input().strip().split(' ')]
+        inputGrid.append(inputGrid_temp)
+
+    res = getBlobBoundaries(inputGrid);

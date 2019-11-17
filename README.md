@@ -479,6 +479,26 @@ Permutations|
 |239. Sliding Window Maximum|https://leetcode.com/problems/sliding-window-maximum/|
 |746. Design Tic-Tac-Toe|https://www.lintcode.com/problem/design-tic-tac-toe/description|
 |126. Word Ladder II|https://leetcode.com/problems/word-ladder-ii/|
+|Top N Competitors|https://leetcode.com/discuss/interview-question/415729/|
+|Zombie in Matrix|https://leetcode.com/discuss/interview-question/411357/|
+|1192. Critical Connections in a Network|https://leetcode.com/problems/critical-connections-in-a-network/|
+|Product Suggestions|https://leetcode.com/discuss/interview-question/414085/|
+|937. Reorder Data in Log Files|https://leetcode.com/problems/reorder-data-in-log-files/|
+|Optimal Utilization|https://leetcode.com/discuss/interview-question/373202|
+|Min Cost to Connect Ropes|https://leetcode.com/discuss/interview-question/344677|
+|Treasure Island|https://leetcode.com/discuss/interview-question/347457|
+|Treasure Island II|https://leetcode.com/discuss/interview-question/356150|
+|Find Pair With Given Sum|https://leetcode.com/discuss/interview-question/356960|
+|572. Subtree of Another Tree|https://leetcode.com/problems/subtree-of-another-tree/|
+|Favorite Genres|https://leetcode.com/discuss/interview-question/373006|
+|Two Sum - Unique Pairs|https://leetcode.com/discuss/interview-question/372434|
+|59. Spiral Matrix II|https://leetcode.com/problems/spiral-matrix-ii/|
+|992. Subarrays with K Different Integers|https://leetcode.com/problems/subarrays-with-k-different-integers/|
+|Max Of Min Altitudes|https://leetcode.com/discuss/interview-question/383669/|
+|Min Cost to Connect All Nodes|https://leetcode.com/discuss/interview-question/356981|
+|957. Prison Cells After N Days|https://leetcode.com/problems/prison-cells-after-n-days/|
+
+
 
 
 

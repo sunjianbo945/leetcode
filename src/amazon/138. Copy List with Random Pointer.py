@@ -59,3 +59,29 @@ class Solution:
             newNode = cur.next if cur else None
 
         return dummy.next
+
+
+
+
+
+
+class Solution2:
+    def copyRandomList(self, head: 'Node') -> 'Node':
+
+        if head is None:
+            return None
+
+        table = {}
+
+        temp = head
+        while temp is not None:
+            table[temp.val] = Node(temp.val, None, None)
+            temp = temp.next
+
+        temp = head
+        while temp is not None:
+            table[temp.val].next = table[temp.next.val] if temp.next is not None else None
+            table[temp.val].random = table[temp.random.val] if temp.random is not None else None
+            temp = temp.next
+
+        return table[head.val]
