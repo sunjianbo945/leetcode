@@ -1,163 +1,117 @@
-google_news_url = "https://news.google.com/news/rss"
-import requests
-#
-#
-# def get_headlines(rss_url):
-#     """
-#     @returns a list of titles from the rss feed located at `rss_url`
-#     """
-#     response = requests.get(rss_url)
-#
-#     if response.status_code != 200:
-#         raise Exception(f'request has eroor {rss_url} can not get response with error code {response.status_code}')
-#
-#     content = response.text
-#     res = []
-#     for index, value in enumerate(content):
-#
-#         if value == '<' and index + 7 <= len(content) and content[index:index + 7] == '<title>':
-#             title = extract_title(content, index + 7)
-#             res.append(title)
-#
-#     return res[1:]
-#
-#
-# def extract_title(content, index):
-#     if index >= len(content):
-#         return ''
-#
-#     res = ''
-#     for i in range(index, len(content)):
-#         if content[i] == '<' and i + 8 <= len(content) and content[i:i + 8] == '</title>':
-#             return res
-#         res += content[i]
-#
-#     return res
-#
-#
-# print(get_headlines(google_news_url))
-
-# def s(A):
-#
-#     temp = find_min(A)
-#
-#     res = 1
-#
-#     for i in range(1,len(temp)):
-#         if temp[i]!=temp[i-1]:
-#             res+=1
-#
-#     return res
-#
-#
-# def find_min(A):
-#     res = [len(A) - 1] * len(A)
-#
-#     min_num = A[-1]
-#
-#     for i in range(len(A) - 2, -1, -1):
-#
-#         if A[i] < min_num:
-#             res[i] = i
-#             min_num = A[i]
-#         else:
-#             res[i] = res[i + 1]
-#
-#     return res
-#
-# print(s([2, 4, 1, 6, 5, 9, 7]))
-
-# !/bin/python3
-
-import sys
+from typing import *
 
 
-# Complete the function below.
-class BlobFinder:
-
-    def __init__(self, blob):
-        self.blob = blob
-        self.top = 0
-        self.left = 0
-        self.right = len(blob[0])
-        self.bottom = len(blob)
-        self.totalRead = 0
-
-    def _findTop(self):
-
-        for i in range(self.bottom):
-            for j in range(self.left, self.right):
-                self.totalRead += 1
-                if self.blob[i][j] == 1:
-                    self.top = i
-                    self.left = j
-                    return i
-
-        return -1
+class Pointer:
+    def __init__(self, index, direction):
+        self.index = index
+        self.direction = direction
 
 
-    def _findBottom(self):
-        for i in range(self.bottom - 1, -1, -1):
-            for j in range(self.right-1, self.left-1,-1):
-                self.totalRead += 1
-                if self.blob[i][j] == 1:
-                    self.right = j
-                    self.bottom = i
-                    return
+class Solution:
+    def circularArrayLoop(self, nums: List[int]) -> bool:
+        s, f = Pointer(0, 'r'), Pointer(0, 'r')
+        pre = Pointer(0, 'r')
+        s = self.getNext(nums, s)
+        f = self.getNext(nums, f)
+        f = self.getNext(nums, f)
 
-    def _findLeft(self):
-        most_left = self.right
+        while s.index != f.index:
+            if pre and s.index == pre.index: return False
 
-        for i in range(self.top+1, self.bottom ):
-            for j in range(most_left):
-                self.totalRead += 1
-                if self.blob[i][j] == 1:
-                    most_left = min(j, most_left)
-                    break
+            pre = s
 
-        self.left = most_left
-        return most_left
+            s = self.getNext(nums, s)
+            f = self.getNext(nums, f)
+            f = self.getNext(nums, f)
 
-    def _findRight(self):
-        most_right = self.left
+        return s.direction == f.direction
 
-        for i in range(self.top+1, self.bottom):
-            for j in range(self.right, most_right, -1):
-                self.totalRead += 1
-                if self.blob[i][j] == 1:
-                    most_right = max(j, most_right)
-                    break
+    def getNext(self, nums, pointer):
 
-        self.right = most_right
-        return most_right
+        num = nums[pointer.index]
+        direction = 'r' if num > 0 else 'l'
+        index = (num + pointer.index) % len(nums)
 
-    def findBoundary(self):
-        self._findTop()
-        self._findBottom()
-        self._findLeft()
-        self._findRight()
+        return Pointer(index, direction)
 
 
-def getBlobBoundaries(inputGrid):
-    finder = BlobFinder(inputGrid)
-    finder.findBoundary()
+Solution().circularArrayLoop([-2, 1, -1, -2, -2])
 
-    print('Cell Reads:{}'.format(finder.totalRead))
-    print('Top:{}'.format(finder.top))
-    print('Left:{}'.format(finder.left))
-    print('Right:{}'.format(finder.right))
-    print('Bottom:{}'.format(finder.bottom))
+import queue
+import re
+
+number_or_symbol = re.compile(r'(\d+|[^ 0-9])')
+
+str = "(1+2)*3)"
 
 
-if __name__ == "__main__":
-    inputGrid_rows = 0
-    inputGrid_cols = 0
-    inputGrid_rows = int(input())
-    inputGrid_cols = int(input())
+def eval_str_expr(str_expr: str):
+    tokens = re.findall(number_or_symbol, str_expr)
+    print(tokens)
+    expr_queue = _process_tokens(tokens)
+    print(tokens)
+    return _eval_postfix(expr_queue)
 
-    inputGrid = []
-    for inputGrid_i in range(inputGrid_rows):
-        inputGrid_temp = [int(inputGrid_t) for inputGrid_t in input().strip().split(' ')]
-        inputGrid.append(inputGrid_temp)
 
-    res = getBlobBoundaries(inputGrid);
+def _process_tokens(tokens):
+    stack = [] # save operator
+    output_queue = queue.Queue() # save numbers
+    for token in tokens:
+        if token.isnumeric():
+            output_queue.put(token)
+        elif token in '+-*/^':  # operators
+            while stack and stack[-1] in '+-*/^' and _same_or_higher_priority(stack[-1], token):
+                output_queue.put(stack.pop())
+            stack.append(token)
+        elif token == '(':
+            stack.append(token)
+        elif token == ')':
+            # t := stack.pop() <- walrus operator in python 3.8
+            while stack[-1] != '(':
+                output_queue.put(stack.pop())
+    # else such as ' ' will be ignored
+    while stack:
+        output_queue.put(stack.pop())
+
+    return output_queue
+
+
+def _same_or_higher_priority(op1, op2):  # op1 is same or higher order than op2
+    if op2 in '+-':
+        return True
+    elif op2 in '*/':
+        return op1 in '*/^'
+    else:
+        return op1 == '^'
+
+
+def _eval_postfix(postfix_queue):
+    operand_stack = []
+    while not postfix_queue.empty():
+        item = postfix_queue.get()
+        if item.isnumeric():
+            operand_stack.append(int(item))
+        elif item in '+-*/^':
+            first = operand_stack.pop()
+            second = operand_stack.pop()
+
+            if item == '+':
+                operand_stack.append(second + first)
+            elif item == '-':
+                operand_stack.append(second - first)
+            elif item == '*':
+                operand_stack.append(second * first)
+            elif item == '/':
+                operand_stack.append(second / first)
+            elif item == '^':
+                operand_stack.append(second ** first)
+
+    return operand_stack.pop()
+
+
+# print(eval_str_expr('(81 * 6) / 42 + (3 - 1)'))
+# print(eval('(81 * 6) / 42 + (3 - 1)'))
+# print(eval_str_expr('3+2*2'))
+# print(eval_str_expr('3-(2-(1+2))'))
+# print(eval_str_expr('3+2*2'))
+print(eval_str_expr('3*(2+2)'))

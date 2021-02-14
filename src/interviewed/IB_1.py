@@ -3,7 +3,7 @@
 def main(a):
     res = float('inf')
     for i in range(len(a)):
-        if a[i] < res:
+        if a[i] < res and a[i] % 7 == 0:
             res = a[i]
 
     return res
