@@ -5,10 +5,13 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
+
+
 class TreeNode:
     def __init__(self, val):
         self.val = val
         self.left, self.right = None, None
+
 
 class BFSSolution:
     """
@@ -69,12 +72,11 @@ class BFSSolution:
         return root
 
     def _createNode(self, data_collection):
-        if not data_collection:return None
+        if not data_collection: return None
         data = data_collection.pop(0)
 
-        if data == '#':return None
+        if data == '#': return None
         return TreeNode(int(data))
-
 
 
 """
@@ -126,10 +128,3 @@ class DFSSolution:
             return root
 
         return dfs(array)
-
-
-
-
-
-
-

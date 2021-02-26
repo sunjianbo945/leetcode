@@ -19,7 +19,6 @@ class Solution:
 
         dis_from_root[cur],lowest_dis_reach[cur] = dis, dis
 
-
         for neighbor in graph.get(cur):
             if not visited[neighbor]:
                 self.dfs(graph,visited,lowest_dis_reach,dis_from_root,neighbor,cur,dis+1,res)

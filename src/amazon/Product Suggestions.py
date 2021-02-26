@@ -39,13 +39,14 @@ class WordCount:
         self.word = word
         self.count = count
 
+
 class Trie:
 
     def __init__(self):
         self.child = {}
         self.word_list = []
 
-    def insert_word(self,word_count:'Word'):
+    def insert_word(self, word_count: 'Word'):
 
         trie = self
 
@@ -58,7 +59,7 @@ class Trie:
 
     def search(self, word):
 
-        if len(word) <2:
+        if len(word) < 2:
             return []
 
         trie = self
@@ -68,32 +69,30 @@ class Trie:
             else:
                 return []
 
-        res =  sorted(trie.word_list, key = lambda x : (-x.count,x.word))
-        size = min(len(res),3)
+        res = sorted(trie.word_list, key=lambda x: (-x.count, x.word))
+        size = min(len(res), 3)
 
         return [res[i].word for i in range(size)]
 
 
-
 import collections
-def count_func(repository):
 
+
+def count_func(repository):
     res = []
 
     temp = collections.defaultdict(int)
 
     for word in repository:
-
-        temp[word]+=1
+        temp[word] += 1
 
     for word, count in temp.items():
-        res.append(WordCount(word,count))
+        res.append(WordCount(word, count))
 
     return res
 
 
-def product_suggestion(numProducts,repository,customerQuery):
-
+def product_suggestion(numProducts, repository, customerQuery):
     word_counts = count_func(repository)
 
     trie = Trie()
@@ -101,51 +100,10 @@ def product_suggestion(numProducts,repository,customerQuery):
         trie.insert_word(word_count)
 
     res = []
-    for i in range(2,len(customerQuery)+1):
+    for i in range(2, len(customerQuery) + 1):
         res.append(trie.search(customerQuery[:i]))
 
     return res
 
 
-print(product_suggestion(5,["mobile", "mouse", "moneypot", "monitor", "mousepad"],'mouse'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(product_suggestion(5, ["mobile", "mouse", "moneypot", "monitor", "mousepad"], 'mouse'))

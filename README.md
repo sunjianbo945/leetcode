@@ -72,7 +72,7 @@ Permutations|
 |583|Delete Operation for Two Strings|2019.07.29|https://leetcode.com/problems/delete-operation-for-two-strings/|
 |712|Minimum ASCII Delete Sum for Two Strings|2019.07.30|https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/|
 |Tree|
-|94|Binary Tree Inorder Traversal|https://leetcode.com/problems/binary-tree-inorder-traversal/|
+|94|Binary Tree  Traversal|https://leetcode.com/problems/binary-tree--traversal/|
 |589|N-ary Tree Preorder Traversal|https://leetcode.com/problems/n-ary-tree-preorder-traversal/|
 |590|N-ary Tree Postorder Traversal|https://leetcode.com/problems/n-ary-tree-postorder-traversal/|
 |100|Same Tree|https://leetcode.com/problems/same-tree/|
@@ -199,7 +199,7 @@ Permutations|
 |122|Best Time to Buy and Sell Stock II|https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/|
 |301|Remove Invalid Parentheses|https://leetcode.com/problems/remove-invalid-parentheses/|
 |160|Intersection of Two Linked Lists|https://leetcode.com/problems/intersection-of-two-linked-lists/|
-|105|Construct Binary Tree from Preorder and Inorder Traversal|https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/|
+|105|Construct Binary Tree from Preorder and  Traversal|https://leetcode.com/problems/construct-binary-tree-from-preorder-and--traversal/|
 |273|Integer to English Words|https://leetcode.com/problems/integer-to-english-words/|
 |140|Word Break II|https://leetcode.com/problems/word-break-ii/|
 |54|Spiral Matrix|https://leetcode.com/problems/spiral-matrix/|

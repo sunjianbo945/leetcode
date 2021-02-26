@@ -48,64 +48,44 @@
 # Output: [[1, 3], [3, 2]]
 
 
-def get_pairs(a,b,target):
+def get_pairs(a, b, target):
+    a = sorted(a, key=lambda x: x[1])
+    b = sorted(b, key=lambda x: x[1])
+    l, r = 0, len(b) - 1
 
-    a = sorted(a,key=lambda x:x[1])
-    b=sorted(b,key=lambda  x:x[1])
-    l ,r = 0 ,len(b)-1
+    curr_diff = float('inf')
+    res = []
+    while l < len(a) and r >= 0:
+        curr_sum = a[l][1] + b[r][1]
+        if target >= curr_sum:
+            if target - curr_sum < curr_diff:
+                curr_diff = target - curr_sum
+                res = []
 
-    cur_diff=float('inf')
-    res =[]
-    while l<len(a) and r>=0:
-        if target>=a[l][1]+b[r][1]:
-            if target-a[l][1]-b[r][1]<cur_diff:
-                cur_diff = target-a[l][1]-b[r][1]
-                res.clear()
-
-            res.append([a[l][0],b[r][0]])
-
-            l+=1
+            res.append([a[l][0], b[r][0]])
+            l += 1
         else:
-            r-=1
+            r -= 1
 
     return res
 
-print(get_pairs(
-[[1, 2], [2, 4], [3, 6]],
-[[1, 2]],7
-))
-
 
 print(get_pairs(
-[[1, 3], [2, 5], [3, 7], [4, 10]],
-[[1, 2], [2, 3], [3, 4], [4, 5]],10
+    [[1, 2], [2, 4], [3, 6]],
+    [[1, 2]], 7
 ))
 
 print(get_pairs(
-[[1, 8], [2, 7], [3, 14]],
-[[1, 5], [2, 10], [3, 14]],20
+    [[1, 3], [2, 5], [3, 7], [4, 10]],
+    [[1, 2], [2, 3], [3, 4], [4, 5]], 10
 ))
 
 print(get_pairs(
-[[1, 8], [2, 15], [3, 9]],
-[[1, 8], [2, 11], [3, 12]],20
+    [[1, 8], [2, 7], [3, 14]],
+    [[1, 5], [2, 10], [3, 14]], 20
 ))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(get_pairs(
+    [[1, 8], [2, 15], [3, 9]],
+    [[1, 8], [2, 11], [3, 12]], 20
+))
