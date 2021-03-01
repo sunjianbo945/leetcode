@@ -1,20 +1,5 @@
 from typing import List
-
-
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-
-    def __repr__(self):
-        return str(self.val)
-
-
-class Node:
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
+from src.data_structure.tree.model import TreeNode, Node
 
 
 # pre, in, post, order is relative to root
@@ -60,17 +45,19 @@ def preorder_divide_conquer(node):
     if not node: return []
 
     res = [node.val]
+    # divide
     left = preorder_divide_conquer(node.left)
     right = preorder_divide_conquer(node.right)
+    # conquer
     res.extend(left)
     res.extend(right)
 
-    return res
+    return res  # [node.val, *preorder_divide_conquer(node.left), *preorder_divide_conquer(node.right)]
 
 
 # https://leetcode.com/problems/n-ary-tree-preorder-traversal/
 class Solution589:
-    def preorderNary(self, root: 'Node') -> List[int]:
+    def preorderNary_iterative(self, root: 'Node') -> List[int]:
         if root is None:
             return []
 
@@ -78,18 +65,31 @@ class Solution589:
         while stack:
             root = stack.pop()
             output.append(root.val)
-            stack.extend(root.children[::-1])
+            stack.extend(root.children[::-1])  # stack do not have extend, should use for-loop
 
         return output
 
-    def preorderNary_recursion(self, root: 'Node') -> List[int]:
+    def preorderNary_divide_conquer(self, root: 'Node') -> List[int]:
         res = []
         if not root: return res
         res.append(root.val)
         for child in root.children:
             if child:
-                res += self.preorderNary_recursion(child)
+                res += self.preorderNary_divide_conquer(child)
 
+        return res
+
+    def preorderNary_recursion(self, root: 'Node') -> List[int]:
+        res = []
+
+        def dfs(node):
+            if not node: return
+
+            res.append(node.val)
+            for child in node.children():
+                dfs(child)
+
+        dfs(root)
         return res
 
 
@@ -107,7 +107,9 @@ def inorder_traversal_recursion(root: 'TreeNode'):
     def dfs(node):
         if not node: return
         dfs(node.left)
+
         res.append(node.val)
+
         dfs(node.right)
 
     dfs(root)
@@ -127,20 +129,21 @@ def inorder_traversal_iterative(root: 'TreeNode') -> List[int]:
         # now curr is None
         curr = stack.pop()
         res.append(curr.val)
+
         curr = curr.right
 
     return res
 
 
-def inorder_divide_conqur(root):
+def inorder_divide_conquer(root):
     if not root: return []
 
     res = []
-    left = inorder_divide_conqur(root.left)
-    res += left
+    res += inorder_divide_conquer(root.left)
+
     res.append(root.val)
-    right = inorder_divide_conqur(root.right)
-    res += right
+
+    res += inorder_divide_conquer(root.right)
     return res
 
 
@@ -159,6 +162,7 @@ def postorder_traversal_recursion(root: 'TreeNode') -> List[int]:
         if not node: return
         dfs(node.left)
         dfs(node.right)
+
         res.append(node.val)
 
     dfs(root)
@@ -207,14 +211,12 @@ def postorder_traversal_iterative2(root: 'TreeNode') -> List[int]:
     return res
 
 
-def postorder_divide_conqur(node: 'TreeNode'):
+def postorder_divide_conquer(node: 'TreeNode'):
     if not node: return []
 
     res = []
-    left = postorder_divide_conqur(node.left)
-    right = postorder_divide_conqur(node.right)
-    res += left
-    res += right
+    res += postorder_divide_conquer(node.left)
+    res += postorder_divide_conquer(node.right)
     res.append(node.val)
     return res
 
@@ -230,9 +232,9 @@ if __name__ == '__main__':
 
     print(f'inorder_traversal_recursion results: {inorder_traversal_recursion(root)}')
     print(f'inorder_traversal_iterative results: {inorder_traversal_iterative(root)}')
-    print(f'inorder_divide_conqur results: {inorder_divide_conqur(root)}')
+    print(f'inorder_divide_conqur results: {inorder_divide_conquer(root)}')
 
     print(f'postorder_traversal_recursion results: {postorder_traversal_recursion(root)}')
     print(f'postorder_traversal_iterative results: {postorder_traversal_iterative(root)}')
     print(f'postorder_traversal_iterative2 results: {postorder_traversal_iterative2(root)}')
-    print(f'postorder_divide_conqur results: {postorder_divide_conqur(root)}')
+    print(f'postorder_divide_conqur results: {postorder_divide_conquer(root)}')

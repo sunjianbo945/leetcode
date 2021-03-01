@@ -1,25 +1,11 @@
 from collections import *
 from typing import *
 
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self):
-        return str(self.val)
-
-
-class Node:
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
+from src.data_structure.tree.model import TreeNode, Node
 
 
 # https://leetcode.com/problems/binary-tree-level-order-traversal/
-class Solution106:
+class Solution102:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         res = []
         if not root: return res
@@ -72,7 +58,9 @@ class Solution429:
             nodes = []
             for _ in range(size):
                 node = queue.pop(0)
+
                 nodes.append(node.val)
+
                 for child in node.children:
                     if child: queue.append(child)
 
@@ -92,9 +80,10 @@ class Solution103:
             size = len(queue)
             nodes = []
             for _ in range(size):
-
                 node = queue.pop(0)
+
                 nodes.append(node.val)
+
                 if node.left: queue.append(node.left)
                 if node.right: queue.append(node.right)
 
@@ -113,14 +102,40 @@ class Solution958:
         seq = 1
         while nodes:
             node, v = nodes.pop(0)
+
             if seq != v: return False
             seq += 1
-            if node.left:
-                nodes.append((node.left, 2 * v))
-            if node.right:
-                nodes.append((node.right, 2 * v + 1))
+
+            if node.left: nodes.append((node.left, 2 * v))
+            if node.right: nodes.append((node.right, 2 * v + 1))
 
         return True
+
+
+# https://leetcode.com/problems/maximum-width-of-binary-tree/
+class Solution662:
+    def widthOfBinaryTree(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
+        res = 0
+        # queue of elements [(node, col_index)]
+        queue = deque()
+        queue.append((root, 0))
+
+        while queue:
+            size = len(queue)
+            _, most_left = queue[0]
+            mark = most_left
+            for _ in range(size):
+                node, mark = queue.popleft()
+                # preparing for the next level
+                if node.left: queue.append((node.left, 2 * mark))
+                if node.right: queue.append((node.right, 2 * mark + 1))
+
+            res = max(res, mark - most_left + 1)
+
+        return res
 
 
 # https://leetcode.com/problems/cousins-in-binary-tree/
@@ -132,6 +147,7 @@ class Solution993:
             size = len(queue)
             for _ in range(size):
                 node, parent = queue.pop(0)
+
                 if x == node.val or y == node.val:
                     if not firstP:
                         firstP = parent
@@ -149,17 +165,17 @@ class Solution993:
 # https://leetcode.com/problems/binary-tree-vertical-order-traversal/
 class Solution314:
     def verticalOrder(self, root: TreeNode) -> List[List[int]]:
-        columnTable = defaultdict(list)
+        if not root: return []
+        columnTable = defaultdict(list)  # column => list
         queue = deque([(root, 0)])
 
         while queue:
             node, column = queue.popleft()
 
-            if node is not None:
-                columnTable[column].append(node.val)
+            columnTable[column].append(node.val)
 
-                queue.append((node.left, column - 1))
-                queue.append((node.right, column + 1))
+            if node.left: queue.append((node.left, column - 1))
+            if node.right: queue.append((node.right, column + 1))
 
         return [columnTable[x] for x in sorted(columnTable.keys())]
 
@@ -167,7 +183,7 @@ class Solution314:
 # https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
 class Solution987:
     def verticalTraversal(self, root: TreeNode) -> List[List[int]]:
-        columnTable = defaultdict(list)
+        columnTable = defaultdict(list)  # column as key, value is (row, node_value)
         queue = deque([(root, 0, 0)])
 
         while queue:
@@ -177,9 +193,9 @@ class Solution987:
             if node.right: queue.append((node.right, row + 1, column + 1))
 
         res = []
-        for x in sorted(columnTable.keys()):
+        for x in sorted(columnTable.keys()):  # sorted by column
             temp = []
-            for rwo, val in sorted(columnTable[x]):
+            for row, val in sorted(columnTable[x]):  # sorted by row, then number
                 temp.append(val)
             res.append(temp)
 

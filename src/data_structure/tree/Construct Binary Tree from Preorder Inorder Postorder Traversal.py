@@ -1,20 +1,11 @@
 # Definition for a binary tree node.
-from src.data_structure.tree.pre_in_post_order_traversal.tree_basic_traversal import *
-
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self):
-        return str(self.val)
+from src.data_structure.tree.tree_basic_traversal import *
 
 
 # Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is
 # the inorder traversal of the same tree, construct and return the binary tree.
 
+# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 class Solution105:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         def dfs(in_left, in_right):  # O(n) time complexity since every node we only consider one time
@@ -44,6 +35,7 @@ class Solution105:
 
 # Given two integer arrays inorder and postorder where inorder is the inorder traversal of a binary tree and
 # postorder is the postorder traversal of the same tree, construct and return the binary tree.
+# https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
 class Solution106:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
         index_map = {val: idx for idx, val in enumerate(inorder)}  # space complexity O(n)
@@ -67,9 +59,7 @@ class Solution106:
         return dfs(0, len(inorder))
 
 
-# Return any binary tree that matches the given preorder and postorder traversals.
-#
-# Values in the traversals pre and post are distinct positive integers.
+# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
 class Solution889:
     def constructFromPrePost(self, pre: List[int], post: List[int]) -> TreeNode:
         def make(pre_left, post_left, N):  # O(N)

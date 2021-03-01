@@ -6,12 +6,14 @@
 # In the resulted path, before we visit the last airport (denoted as V), we can say that we have already used all the
 # rest flights, i.e. if there is any flight starting from V, then we must have already taken that before.
 
-from typing import *
 from collections import *
+from typing import *
 
-class Solution:
+
+# https://leetcode.com/problems/reconstruct-itinerary/
+class Solution332:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        graph = defaultdict(list)
+        graph = defaultdict(list) # cannot use set as value since the relationship: key - value edge
         for departure, arrival in sorted(tickets):
             graph[departure].append(arrival)
 
@@ -20,7 +22,7 @@ class Solution:
         def dfs(node):
             dests = graph[node]
             while dests:
-                to = dests.pop(0)
+                to = dests.pop(0)  # remove node, so edge
                 dfs(to)
 
             res.append(node)

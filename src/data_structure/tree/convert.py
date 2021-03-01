@@ -1,20 +1,6 @@
 from typing import *
+from src.data_structure.tree.model import TreeNode, Node
 
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self):
-        return str(self.val)
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
 
 # https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/

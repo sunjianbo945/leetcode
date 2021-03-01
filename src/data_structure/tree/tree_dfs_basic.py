@@ -2,21 +2,7 @@ from collections import *
 from functools import *
 from typing import *
 
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self):
-        return str(self.val)
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from src.data_structure.tree.model import TreeNode
 
 
 # https://leetcode.com/problems/same-tree/
@@ -224,6 +210,7 @@ class Solution1448:
 
         dfs(root, float('-inf'))
         return count
+
 
 # https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
 class Solution1315:

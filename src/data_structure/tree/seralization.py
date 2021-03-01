@@ -2,17 +2,7 @@ from collections import *
 from functools import lru_cache
 from typing import *
 
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-
-class Node(object):
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
+from src.data_structure.tree.model import TreeNode, Node
 
 
 # https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
@@ -34,6 +24,7 @@ class Solution1008:
             return None
 
         return dfs(preorder, float('-inf'), float('inf'))
+
 
 # https://leetcode.com/problems/serialize-and-deserialize-bst/submissions/
 class Codec449:
@@ -64,6 +55,7 @@ class Codec449:
                 return node
 
         return build(float('-infinity'), float('infinity'))
+
 
 # https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 class Codec297:
