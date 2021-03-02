@@ -20,7 +20,7 @@ class Solution:
         queue = [0]
         visited = {0}
 
-        # bfs
+        # search
         while queue:
             node = queue.pop(0)
             for neighbor in graph.get(node, []):

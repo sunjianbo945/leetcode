@@ -250,3 +250,79 @@ class BSTIterator173:
     #
     # def hasNext(self) -> bool:
     #     return self.stack
+
+
+# When you do the inorder traversal of a binary tree, the neighbors of given node are called Predecessor
+# (the node lies behind of given node) and Successor (the node lies ahead of given node).
+# https://leetcode.com/problems/inorder-successor-in-bst/
+class Solution285:
+    def successor(self, root: 'TreeNode', p: 'TreeNode') -> 'TreeNode':
+        find = False
+        res = None
+
+        def dfs(node):
+            nonlocal res, find
+            if not node: return
+            if res: return
+            dfs(node.left)
+
+            if find:
+                res = node
+                find = False
+
+            if node.val == p.val:
+                find = True
+
+            if res: return
+            dfs(node.right)
+
+        dfs(root)
+        return res
+
+    def predeccessor(self, root: 'TreeNode', p: 'TreeNode') -> 'TreeNode':
+        find = False
+        pre = None
+
+        def dfs(node):
+            nonlocal pre, find
+            if not node: return
+            if find: return
+            dfs(node.left)
+
+            if node.val == p.val:
+                find = True
+
+            if not find:
+                pre = node
+
+            if find: return
+            dfs(node.right)
+
+        dfs(root)
+        return pre
+
+
+# the successor can be right then most left, or parents upward if the child is right of parent
+# https://leetcode.com/problems/inorder-successor-in-bst-ii/
+class Solution510:
+    def inorderSuccessor(self, node: 'Node') -> 'Node':
+        def findMostLeft(node):
+            if not node.left:
+                return node
+
+            return findMostLeft(node.left)
+
+        def parentMostLeft(node, child):
+            if not node: return None
+
+            if node.right == child:
+                return parentMostLeft(node.parent, node)
+
+            return node
+
+        if node.right:
+            # look underneath
+            return findMostLeft(node.right)
+        else:
+            # look upward
+            return parentMostLeft(node.parent, node)

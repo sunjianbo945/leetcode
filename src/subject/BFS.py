@@ -3,7 +3,7 @@
 BFS模板
 模板1
 
-void bfs(...)
+void search(...)
 {
     queue q;
     q.push(startRoot);
@@ -22,7 +22,7 @@ void bfs(...)
 
 模板2
 
-void bfs(...)
+void search(...)
 {
     queue q;
     q.push(startRoot);

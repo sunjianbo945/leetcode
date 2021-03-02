@@ -7,7 +7,7 @@ from typing import List
 
 # https://leetcode.com/problems/subsets/
 class Solution78:
-    def subsets(self, nums: List[int]) -> List[List[int]]:  # O(n * 2^n)
+    def subsets(self, nums: List[int]) -> List[List[int]]:  # O(n * 2^n) O(n)
         res = []
 
         def dfs(idx, path):
@@ -48,7 +48,7 @@ class Solution90:
 
 # https://leetcode.com/problems/combinations/
 class Solution77:
-    def combine(self, n: int, k: int) -> List[List[int]]:  # O(2^n)
+    def combine(self, n: int, k: int) -> List[List[int]]:  # O(n!/(k!(m-k)!)) O(n)
         res = []
 
         def dfs(idx, path):
@@ -69,7 +69,7 @@ class Solution77:
 
 # https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 class Solution17:
-    def letterCombinations(self, A: str) -> List[str]:
+    def letterCombinations(self, A: str) -> List[str]:  # O (3^N×4^M) O(n)
         n = len(A)
         if not n: return []
         phone_book = {
@@ -122,7 +122,7 @@ class Solution254:
 
 # https://leetcode.com/problems/palindrome-partitioning/
 class Solution:
-    def partition(self, s: str) -> List[List[str]]:  # O(n * 2^n), O(n^2)
+    def partition(self, s: str) -> List[List[str]]:  # O(2^n), O(n^2)
         n = len(s)
         palindrome_index = defaultdict(list)
         for i in range(n):
@@ -155,7 +155,7 @@ class Solution:
         dfs(0, [])
         return res
 
-    def partition_cache(self, s: str) -> List[List[str]]:
+    def partition_cache(self, s: str) -> List[List[str]]:  # O(n^4), O(n^2)
         n = len(s)
         palindrome_index = defaultdict(list)
         for i in range(n):
@@ -194,11 +194,10 @@ class Solution39:
         res = []
 
         def dfs(start, target, path):
+            if target < 0: return
             if target == 0:
                 res.append(list(path))
                 return
-
-            if target < 0: return
 
             for i in range(start, n):
                 path.append(A[i])
