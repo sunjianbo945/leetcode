@@ -1,4 +1,5 @@
 import math
+from heapq import heappush, heappop
 from typing import *
 
 from src.data_structure.tree.model import TreeNode
@@ -326,3 +327,46 @@ class Solution510:
         else:
             # look upward
             return parentMostLeft(node.parent, node)
+
+
+# https://leetcode.com/problems/closest-binary-search-tree-value/
+class Solution270:
+    def closestValue(self, root: TreeNode, target: float) -> int:
+        min_diff = math.inf
+        res = 0
+
+        def dfs(node):
+            nonlocal min_diff, res
+            if not node: return 0
+
+            curr_diff = abs(node.val - target)
+            if curr_diff < min_diff:
+                min_diff = curr_diff
+                res = node.val
+
+            if target < node.val:
+                dfs(node.left)
+            else:
+                dfs(node.right)
+
+        dfs(root)
+        return res
+
+
+# https://leetcode.com/problems/closest-binary-search-tree-value-ii/
+class Solution272:  # this question also can be done by quick select
+    def closestKValues(self, root: TreeNode, target: float, k: int) -> List[int]:  # O(Nlogk) O(k+h)
+        def dfs(node: TreeNode):
+            if not node: return
+
+            dfs(node.left)
+
+            heappush(heap, (-abs(node.val - target), node.val))
+            if len(heap) > k:
+                heappop(heap)
+
+            dfs(node.right)
+
+        heap = []
+        dfs(root)
+        return [x for _, x in heap]

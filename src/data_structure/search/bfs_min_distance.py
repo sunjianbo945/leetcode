@@ -424,3 +424,39 @@ class Solution1730:
             step += 1
 
         return -1
+
+
+# https://leetcode.com/problems/evaluate-division/
+class Solution399:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        graph = defaultdict(list)
+        for (x, y), value in zip(equations, values):
+            graph[x].append([y, value])
+            graph[y].append([x, 1 / value])
+
+        def bfs(start, target):
+            queue = [(start, 1)]
+            seen = {start}
+
+            while queue:
+                char, value = queue.pop(0)
+                if char == target: return value
+
+                for nchar, nvalue in graph[char]:
+                    if nchar in seen: continue
+
+                    seen.add(nchar)
+                    queue.append([nchar, value * nvalue])
+
+            return -1.0
+
+        res = []
+        for numerator, denominator in queries:
+            if not graph[numerator] or not graph[denominator]:
+                res.append(-1.0)
+            elif numerator == denominator:
+                res.append(1.0)
+            else:
+                res.append(bfs(numerator, denominator))
+
+        return res

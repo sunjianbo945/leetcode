@@ -234,6 +234,24 @@ class Solution1136:
         return res
 
 
+# https://leetcode.com/problems/verifying-an-alien-dictionary/
+class Solution953:  # this is not dfs or bfs question, but it is the derivative of the alien dictionary
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        letter_index = defaultdict(int)  # 'h' -> 0
+        for idx, char in enumerate(order):
+            letter_index[char] = idx
+
+        for w1, w2 in zip(words, words[1:]):
+            for char1, char2 in zip(w1, w2):
+                if char1 == char2: continue
+                if letter_index[char1] > letter_index[char2]: return False
+                break
+            else:
+                if len(w2) < len(w1): return False
+
+        return True
+
+
 # https://leetcode.com/problems/alien-dictionary/
 class Solution426:
     def alienOrder_bfs(self, words: List[str]) -> str:
@@ -331,3 +349,48 @@ class Solution310:
                         queue.append(neighbor)
 
         return pre
+
+
+# https://leetcode.com/problems/keys-and-rooms/
+class Solution841:
+    def canVisitAllRooms_bfs(self, rooms: List[List[int]]) -> bool:
+        graph = defaultdict(list)
+        m, n = len(rooms), len(rooms[0])
+        for room in range(m):
+            keys = rooms[room]
+            graph[room].extend(keys)
+
+        queue = [0]
+        seen = {0}
+        count = 0
+        while queue:
+            room = queue.pop(0)
+
+            count += 1
+
+            for nRoom in graph[room]:
+                if nRoom in seen: continue
+
+                seen.add(nRoom)
+                queue.append(nRoom)
+
+        return count == m
+
+    def canVisitAllRooms_dfs(self, rooms: List[List[int]]) -> bool:
+        graph = defaultdict(list)
+        m, n = len(rooms), len(rooms[0])
+        for room in range(m):
+            keys = rooms[room]
+            graph[room].extend(keys)
+
+        seen = set()
+
+        def dfs(room):
+            if room in seen: return
+
+            seen.add(room)
+            for neighbor in graph[room]:
+                dfs(neighbor)
+
+        dfs(0)
+        return len(seen) == m
