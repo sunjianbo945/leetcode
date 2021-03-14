@@ -1,9 +1,9 @@
 from typing import List
 
-# https://leetcode.com/problems/add-strings/
 from src.data_structure.linkedList.model import ListNode
 
 
+# https://leetcode.com/problems/add-strings/
 class Solution415:
     def addStrings(self, num1: str, num2: str) -> str:
         m, n = len(num1) - 1, len(num2) - 1
@@ -13,8 +13,7 @@ class Solution415:
         while m >= 0 or n >= 0:
             number1 = ord(num1[m]) - ord('0') if m >= 0 else 0
             number2 = ord(num2[n]) - ord('0') if n >= 0 else 0
-            value = (number1 + number2 + carry) % 10
-            carry = (number1 + number2 + carry) // 10
+            carry, value = divmod(number1 + number2 + carry, 10)
             res.append(value)
             m -= 1
             n -= 1
@@ -34,8 +33,7 @@ class Solution989:
         while m >= 0 or n >= 0:
             a = A[m] if m >= 0 else 0
             b = ord(B[n]) - ord('0') if n >= 0 else 0
-            value = (a + b + carry) % 10
-            carry = (a + b + carry) // 10
+            carry, value = divmod(a + b + carry, 10)
             res.append(value)
             m -= 1
             n -= 1
@@ -51,38 +49,12 @@ class Solution66:
         n, carry = len(digits) - 1, 1
         res = []
         while n >= 0:
-            value = (digits[n] + carry) % 10
-            carry = (digits[n] + carry) // 10
+            carry, value = divmod(digits[n] + carry, 10)
             res.append(value)
             n -= 1
 
         if carry: res.append(carry)
         return res[::-1]
-
-
-
-# https://leetcode.com/problems/merge-sorted-array/
-class Solution88:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        last = len(nums1) - 1
-        m -= 1
-        n -= 1
-        while m >= 0 and n >= 0:
-
-            if nums1[m] < nums2[n]:
-                nums1[last] = nums2[n]
-                n -= 1
-            else:
-                nums1[last] = nums1[m]
-                m -= 1
-
-            last -= 1
-
-        if n >= 0:
-            nums1[: n + 1] = nums2[:n + 1]
 
 
 # https://leetcode.com/problems/add-two-numbers/
@@ -129,6 +101,30 @@ class Solution445:
         if carry:
             curr = ListNode(carry, curr)
         return curr
+
+
+# https://leetcode.com/problems/merge-sorted-array/
+class Solution88:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        last = len(nums1) - 1
+        m -= 1
+        n -= 1
+        while m >= 0 and n >= 0:
+            if nums1[m] < nums2[n]:
+                nums1[last] = nums2[n]
+                n -= 1
+            else:
+                nums1[last] = nums1[m]
+                m -= 1
+
+            last -= 1
+
+        if n >= 0:
+            nums1[: n + 1] = nums2[:n + 1]
+
 
 # https://leetcode.com/problems/merge-intervals/
 class Solution56:

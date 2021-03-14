@@ -2,6 +2,21 @@ from collections import defaultdict
 from typing import List
 
 
+# https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
+class Solution1010:
+    def numPairsDivisibleBy60(self, time: List[int]) -> int:
+        time_count = defaultdict(int)
+        res = 0
+        for t in time:
+            t %= 60
+
+            res += time_count[0] if not t else time_count[60 - t]
+
+            time_count[t] += 1
+
+        return res
+
+
 # https://leetcode.com/problems/continuous-subarray-sum/
 # a%k = x
 # b%k = x

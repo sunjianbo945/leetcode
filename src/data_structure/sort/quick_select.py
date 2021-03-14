@@ -43,4 +43,3 @@ class Solution215:
         return l
 
 
-print(Solution().kthLargestElement(3, [9, 3, 2, 4, 8]))

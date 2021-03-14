@@ -1,26 +1,27 @@
 from typing import List
 
+
 # a structure to represent a graph
 # template
 class DisjointSet:
-    def __init__(self, num_of_v):
-        self.parent = [i for i in range(num_of_v)]
-        self.rank = [0] * num_of_v
+    def __init__(self, N):
+        self.parents = list(range(N + 1))
+        self.rank = [0] * (N + 1)
 
     def find(self, node):
-        if self.parent[node] != node:
-            self.parent[node] = self.find(self.parent[node])
-        return self.parent[node]
+        if node != self.parents[node]:
+            self.parents[node] = self.find(self.parents[node])
+        return self.parents[node]
 
     def union(self, u, v):
         pu, pv = self.find(u), self.find(v)
-        if self.rank[u] > self.rank[v]:
-            self.parent[pv] = pu
-        elif self.rank[u] < self.rank[v]:
-            self.parent[pu] = pv
+        if self.rank[pu] < self.rank[pv]:
+            self.parents[pu] = pv
+        elif self.rank[pv] < self.rank[pu]:
+            self.parents[pv] = pu
         else:
-            self.parent[pv] = pu
-            self.rank[u] += 1
+            self.parents[pv] = pu
+            self.rank[pu] += 1
 
 
 # https://leetcode.com/problems/graph-valid-tree/
@@ -37,3 +38,19 @@ class Solution216:
                 g.union(u, v)
 
         return True
+
+
+# https://leetcode.com/problems/connecting-cities-with-minimum-cost/
+class Solution1135:
+    def minimumCost(self, N: int, connections: List[List[int]]) -> int:
+        ds = DisjointSet(N)
+        total = 0
+        cost = 0
+        connections.sort(key=lambda x: x[2])
+        for a, b, c in connections:
+            if ds.find(a) == ds.find(b): continue
+            ds.union(a, b)
+            cost += c
+            total += 1
+
+        return cost if total == N - 1 else -1

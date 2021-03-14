@@ -2,6 +2,21 @@ from math import inf
 from typing import List
 
 
+# https://leetcode.com/problems/container-with-most-water/
+class Solution11:
+    def maxArea(self, height: List[int]) -> int:
+        ans = 0
+        l = 0
+        r = len(height) - 1
+        while l < r:
+            ans = max(ans, min(height[l], height[r]) * (r - l))
+            if height[l] < height[r]:
+                l += 1
+            else:
+                r -= 1
+        return ans
+
+
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 class Solution167:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
@@ -17,7 +32,7 @@ class Solution167:
 
 
 # https://leetcode.com/problems/two-sum-less-than-k/
-class Solution1009:
+class Solution1099:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
         nums.sort()
         l, r = 0, len(nums) - 1

@@ -2,8 +2,10 @@ from collections import *
 from heapq import *
 from typing import List
 
-
 # https://leetcode.com/problems/k-closest-points-to-origin/
+from src.data_structure.linkedList.model import ListNode
+
+
 class Solution973:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:  # O(nlogk), O(k)
         heap = []  # max heap
@@ -132,3 +134,54 @@ class Solution759:
             else:
                 free = max(free, e)
         return res
+
+
+# https://leetcode.com/problems/reorganize-string/
+class Solution767:
+    def reorganizeString(self, S: str) -> str:
+        char_count = Counter(S)
+        heap = []
+
+        for char, count in char_count.items():
+            heappush(heap, (-count, char))
+
+        res = []
+        while len(heap) >= 2:
+            n1, c1 = heappop(heap)
+            n2, c2 = heappop(heap)
+
+            res.append(c1)
+            res.append(c2)
+
+            if n1 + 1 < 0: heappush(heap, (n1 + 1, c1))
+            if n2 + 1 < 0: heappush(heap, (n2 + 1, c2))
+
+        if len(heap) == 1:
+            if heap[0][0] == -1:
+                res.append(heap[0][1])
+            else:
+                return ''
+
+        return ''.join(res)
+
+
+# https://leetcode.com/problems/merge-k-sorted-lists/
+class Solution23:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        heap = []
+        for i in range(len(lists)):
+            node = lists[i]
+            if node:
+                heappush(heap, (node.val, i, node))
+
+        dummy = ListNode(-1)
+        cur = dummy
+
+        while heap:
+            _, k, node = heappop(heap)
+            cur.next = node
+            cur = node
+            if node.next:
+                heappush(heap, (node.next.val, k, node.next))
+
+        return dummy.next

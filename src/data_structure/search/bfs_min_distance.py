@@ -186,22 +186,22 @@ class Solution296:
         return res
 
 
-def minTotalDistance_math(self, grid):  # O(mn) sort + greedy
-    m, n = len(grid), len(grid) and len(grid[0])
-    # rows and cols are the person location sorted in order
-    rows, cols = [i for i in range(m) for j in range(n) if grid[i][j]], [j for j in range(n) for i in range(m) if
-                                                                         grid[i][j]]
+    def minTotalDistance_math(self, grid):  # O(mn) sort + greedy
+        m, n = len(grid), len(grid) and len(grid[0])
+        # rows and cols are the person location sorted in order
+        rows, cols = [i for i in range(m) for j in range(n) if grid[i][j]], [j for j in range(n) for i in range(m) if
+                                                                             grid[i][j]]
 
-    def min1d(points):
-        l, r, dis = 0, len(points) - 1, 0
-        while l < r:
-            dis += points[r] - points[l]  # total distance l and r need to walk to meet
-            l += 1
-            r -= 1
+        def min1d(points):
+            l, r, dis = 0, len(points) - 1, 0
+            while l < r:
+                dis += points[r] - points[l]  # total distance l and r need to walk to meet
+                l += 1
+                r -= 1
 
-        return dis
+            return dis
 
-    return min1d(rows) + min1d(cols)
+        return min1d(rows) + min1d(cols)
 
 
 # https://leetcode.com/problems/shortest-distance-from-all-buildings/
@@ -209,7 +209,7 @@ class Solution317:
     def shortestDistance(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
-        dis = [[0] * n for i in range(m)]
+        dis = [[0] * n for _ in range(m)]
         seen = defaultdict(int)  # the i, j has been visited k times
 
         def bfs(x, y):  # x,y is building
@@ -460,3 +460,110 @@ class Solution399:
                 res.append(bfs(numerator, denominator))
 
         return res
+
+
+# https://leetcode.com/problems/open-the-lock/
+class Solution752:
+    def openLock(self, deadends: List[str], target: str) -> int:
+        seen = set(deadends)
+        if '0000' in seen: return -1
+        queue = ['0000']
+        seen.add('0000')
+        turns = 0
+
+        def getNeighbors(lock):
+            res = []
+            for i, c in enumerate(lock):
+                int_c = int(c)
+                forward = int_c + 1 if int_c + 1 <= 9 else 0
+                res.append(lock[:i] + str(forward) + lock[i + 1:])
+                backward = int_c - 1 if int_c - 1 >= 0 else 9
+                res.append(lock[:i] + str(backward) + lock[i + 1:])
+            return res
+
+        while queue:
+            size = len(queue)
+            for _ in range(size):
+                curr = queue.pop(0)
+                if curr == target: return turns
+                for neighbor in getNeighbors(curr):
+                    if neighbor in seen: continue
+
+                    seen.add(neighbor)
+                    queue.append(neighbor)
+            turns += 1
+
+        return -1
+
+
+# https://leetcode.com/problems/snakes-and-ladders/
+class Solution909:
+    def snakesAndLadders(self, board: List[List[int]]) -> int:
+        N = len(board)
+
+        def get(num):
+            # Given a square num s, return board coordinates (r, c)
+            q, r = divmod(num - 1, N)
+            row = N - 1 - q
+            col = r if row % 2 != N % 2 else N - 1 - r
+            return row, col
+
+        step = 0
+        queue = [1]
+        seen = {1}
+        while queue:
+            size = len(queue)
+            for _ in range(size):
+                curr = queue.pop(0)
+
+                if curr == N * N: return step
+
+                for next_pos in range(curr + 1, min(curr + 6, N * N) + 1):
+                    r, c = get(next_pos)
+                    if board[r][c] != -1:
+                        next_pos = board[r][c]
+
+                    if next_pos in seen: continue
+
+                    seen.add(next_pos)
+                    queue.append(next_pos)
+
+            step += 1
+
+        return -1
+
+
+# https://leetcode.com/problems/word-ladder/
+class Solution127:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        wd = set(wordList)
+        if endWord not in wd: return 0
+
+        queue = [beginWord]
+        seen = {beginWord}
+
+        def getNeighbors(word):
+            n = len(word)
+            res = []
+            for i in range(n):
+                for char in range(26):
+                    new_word = word[:i] + chr(char + ord('a')) + word[i + 1:]
+                    if new_word in wd and new_word not in seen:
+                        seen.add(new_word)
+                        res.append(new_word)
+            return res
+
+        step = 1
+        while queue:
+            size = len(queue)
+            for _ in range(size):
+                word = queue.pop(0)
+
+                if word == endWord: return step
+
+                for neighbor in getNeighbors(word):
+                    queue.append(neighbor)
+
+            step += 1
+
+        return 0

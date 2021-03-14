@@ -1,4 +1,6 @@
-from src.data_structure.linkedList.model import ListNode
+from collections import defaultdict
+
+from src.data_structure.linkedList.model import ListNode, NodeWithRadom
 
 
 # https://leetcode.com/problems/reverse-linked-list/
@@ -106,3 +108,48 @@ class Solution445:
             curr = pre
 
         return curr
+
+
+# https://leetcode.com/problems/copy-list-with-random-pointer/
+class Solution138:
+    def copyRandomList(self, head: 'NodeWithRadom') -> 'NodeWithRadom':
+        if not head: return None
+        curr = head
+        node_copied = defaultdict()
+        while curr:
+            node_copied[curr] = NodeWithRadom(curr.val)
+            curr = curr.next
+
+        curr = head
+        while curr:
+            copied = node_copied[curr]
+            copied.next = node_copied[curr.next] if curr.next else None
+            copied.random = node_copied[curr.random] if curr.random else None
+            curr = curr.next
+        return node_copied[head]
+
+    def copyRandomList_itervative(self, head: 'NodeWithRadom') -> 'NodeWithRadom':
+        if not head: return None
+        curr = head
+        # create copy in the list
+        while curr:
+            curr.next = NodeWithRadom(curr.val, curr.next)
+            curr = curr.next.next
+        # link random
+        prev, curr = head, head.next
+        while prev:
+            curr.random = prev.random.next if prev.random else None
+            prev = curr.next
+            curr = prev.next if prev else None
+
+        # split
+        dummy = NodeWithRadom(-1)
+        prev, curr = head, head.next
+        dummy.next = curr
+        while prev:
+            prev.next = curr.next
+            curr.next = curr.next.next if curr.next else None
+            prev = prev.next
+            curr = curr.next
+
+        return dummy.next

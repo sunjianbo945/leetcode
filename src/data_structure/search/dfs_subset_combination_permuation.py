@@ -290,7 +290,7 @@ class Solution1155:
             return res % (10 ** 9 + 7)
 
         return dfs(d, target)
-    
+
 
 # https://leetcode.com/problems/permutations/
 class Solution46:
@@ -332,7 +332,7 @@ class Solution784:
 
             for i in range(idx, n):
                 if S[i].isdigit():
-                    path.append(S[i].lower())
+                    path.append(S[i])
 
                     dfs(i + 1, path)
 
@@ -445,78 +445,3 @@ class Solution60:
             nextPermutation(nums)
 
         return ''.join(map(str, nums))
-
-
-# https://leetcode.com/problems/word-break/
-class Solution139:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:  # O(n^3)
-        wd = set(wordDict)
-        n = len(s)
-
-        @lru_cache(None)  # without lru cache it the algorithm goes to O(2^n)
-        def dfs(start):
-            if start >= n: return True
-
-            for i in range(start, n):  # O(n)
-                part = s[start:i + 1]
-                if part not in wd: continue  # O(n)
-
-                if dfs(i + 1): return True
-
-            return False
-
-        return dfs(0)
-
-
-# https://leetcode.com/problems/concatenated-words/
-class Solution472:
-    def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
-        wd = set(words)
-
-        @lru_cache(None)
-        def dfs(start):
-            if start >= n: return True
-
-            for i in range(start, n):  # O(n)
-                part = word[start:i + 1]
-                if part not in wd: continue  # O(n)
-
-                if dfs(i + 1): return True
-
-            return False
-
-        res = []
-        for word in words:
-            n = len(word)
-            if n < 1: continue
-
-            dfs.cache_clear()
-            wd.remove(word)
-            if dfs(0):
-                res.append(word)
-            wd.add(word)
-
-        return res
-
-
-# https://leetcode.com/problems/word-break-ii/
-class Solution140:
-    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:  # O(n^4)
-        wd = set(wordDict)
-        n = len(s)
-
-        @lru_cache(None)
-        def dfs(start):
-            if start >= n: return [[]]
-
-            res = []
-            for i in range(start, n):
-                part = s[start:i + 1]
-                if part not in wd: continue
-
-                for p in dfs(i + 1):
-                    res.append([part] + p)
-
-            return res
-
-        return [' '.join(parts) for parts in dfs(0)]

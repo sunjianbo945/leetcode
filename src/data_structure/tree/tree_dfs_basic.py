@@ -2,21 +2,16 @@ from collections import *
 from functools import *
 from typing import *
 
-from src.data_structure.tree.model import TreeNode
+from src.data_structure.tree.model import TreeNode, ListNode
 
 
 # https://leetcode.com/problems/same-tree/
 class Solution100:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        # p and q are both None
-        if not p and not q:
-            return True
-        # one of p and q is None
-        if not q or not p:
-            return False
-        if p.val != q.val:
-            return False
-        return self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
+        if not p and not q: return True
+        if not q or not p: return False
+
+        return p.val == q.val and self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
 
     def isSameTree_iterative(self, p: TreeNode, q: TreeNode) -> bool:
         stack = [(p, q)]
@@ -40,6 +35,7 @@ class Solution101:
         def dfs(left, right):
             if not left and not right: return True
             if not left or not right: return False
+
             return left.val == right.val and dfs(left.left, right.right) and dfs(left.right, right.left)
 
         return dfs(root.left, root.right)
@@ -82,6 +78,7 @@ class Solution1367:
         def dfs(head, root):
             if not head: return True
             if not root: return False
+
             return root.val == head.val and (dfs(head.next, root.left) or dfs(head.next, root.right))
 
         if not head: return True
@@ -145,9 +142,26 @@ class Solution872:
         def dfs(node):
             if not node: return []
             if not node.left and not node.right: return [node.val]
+
             return dfs(node.left) + dfs(node.right)
 
         return list(dfs(root1)) == list(dfs(root2))
+
+
+# https://leetcode.com/problems/path-sum/
+class Solution112:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if not root: return False
+
+        def dfs(node, preSum):
+            if not node: return False
+
+            if not node.left and not node.right:  # this is leaf
+                return node.val + preSum == targetSum
+
+            return dfs(node.left, preSum + node.val) or dfs(node.right, preSum + node.val)
+
+        return dfs(root, 0)
 
 
 # https://leetcode.com/problems/binary-tree-paths/
@@ -169,6 +183,74 @@ class Solution257:
         paths = []
         dfs(root, '')
         return paths
+
+
+# https://leetcode.com/problems/path-sum-ii/
+class Solution113:
+    def pathSum(self, root: TreeNode, targetSum: int) -> List[List[int]]:
+        if not root: return []
+        res = []
+
+        def dfs(node, ancestors, preSum):
+            if not node: return
+
+            if not node.left and not node.right and node.val + preSum == targetSum:
+                res.append(ancestors + [node.val])
+                return
+
+            ancestors.append(node.val)
+            dfs(node.left, ancestors, preSum + node.val)
+            dfs(node.right, ancestors, preSum + node.val)
+            ancestors.pop()  # backtrack
+
+        dfs(root, [], 0)
+        return res
+
+
+# https://leetcode.com/problems/path-sum-iii/
+class Solution437:
+    def pathSum(self, root: TreeNode, target: int) -> int:
+        res = 0
+        cum_sum = Counter()  # cumulative sum and happend times
+        cum_sum[0] = 1
+
+        def dfs(node, prev_sum):
+            nonlocal res
+            if not node: return
+
+            curr_sum = prev_sum + node.val
+            res += cum_sum[curr_sum - target]
+            cum_sum[curr_sum] += 1
+
+            dfs(node.left, curr_sum)
+            dfs(node.right, curr_sum)
+
+            cum_sum[curr_sum] -= 1  # backtrack
+
+        dfs(root, 0)
+        return res
+
+
+# https://leetcode.com/problems/sum-root-to-leaf-numbers/
+class Solution129:
+    def sumNumbers(self, root: TreeNode) -> int:
+        res = 0
+
+        def dfs(node, prev_sum):
+            nonlocal res
+            if not node: return
+
+            if not node.left and not node.right:
+                res += prev_sum + node.val
+                return
+
+            next_sum = (prev_sum + node.val) * 10
+
+            dfs(node.left, next_sum)
+            dfs(node.right, next_sum)
+
+        dfs(root, 0)
+        return res
 
 
 # https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
@@ -212,47 +294,8 @@ class Solution1448:
         return count
 
 
-# https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
-class Solution1315:
-    def sumEvenGrandparent(self, root: TreeNode) -> int:  # this method is not generic.
-        def dfs(node, p, gp):
-            if not node: return 0
-            res = node.val if gp % 2 == 0 else 0
-            res += dfs(node.left, node.val, p)
-            res += dfs(node.right, node.val, p)
-
-            return res
-
-        return dfs(root, 1, 1)
-
-    def sumEvenGrandparent_right(self, root: TreeNode) -> int:  # this is better
-
-        if not root: return 0
-
-        res = 0
-        if root.val % 2 == 0:
-            grandChildren = self.getNodes(root, 2)
-            for gc in grandChildren:
-                res += gc.val
-
-        res += self.sumEvenGrandparent(root.left)
-        res += self.sumEvenGrandparent(root.right)
-
-        return res
-
-    def getNodes(self, node, depth) -> List['TreeNode']:
-        if not node: return []
-
-        if depth == 0: return [node]
-        res = []
-        res += self.getNodes(node.left, depth - 1)
-        res += self.getNodes(node.right, depth - 1)
-        return res
-
-
 # https://leetcode.com/problems/delete-nodes-and-return-forest/
 class Solution1110:
-
     def delNodes(self, root: TreeNode, to_delete: List[int]) -> List[TreeNode]:
         to_delete_set = set(to_delete)
         res = []

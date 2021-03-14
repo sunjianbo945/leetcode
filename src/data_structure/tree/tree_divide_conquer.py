@@ -1,5 +1,5 @@
-import collections
 from collections import *
+from math import inf
 from typing import *
 
 from src.data_structure.tree.model import TreeNode
@@ -21,122 +21,6 @@ class Solution543:
             return max(left, right) + 1
 
         dfs(root)
-        return res
-
-
-# https://leetcode.com/problems/path-sum/
-class Solution112:
-    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
-        if not root: return False
-
-        def dfs(node, preSum):
-            if not node: return False
-
-            if not node.left and not node.right:  # this is leaf
-                return node.val + preSum == targetSum
-
-            return dfs(node.left, preSum + node.val) or dfs(node.right, preSum + node.val)
-
-        return dfs(root, 0)
-
-
-# https://leetcode.com/problems/path-sum-ii/solution/
-class Solution113:
-    def pathSum(self, root: TreeNode, targetSum: int) -> List[List[int]]:
-        if not root: return []
-        res = []
-
-        def dfs(node, ancestors, preSum):
-            if not node: return
-
-            if not node.left and not node.right and node.val + preSum == targetSum:
-                res.append(ancestors + [node.val])
-
-            dfs(node.left, ancestors + [node.val], preSum + node.val)
-            dfs(node.right, ancestors + [node.val], preSum + node.val)
-
-        dfs(root, [], 0)
-        return res
-
-
-# https://leetcode.com/problems/path-sum-iii/
-class Solution437:
-    def pathSum(self, root: TreeNode, target: int) -> int:
-        res = 0
-        cum_sum = Counter()  # cumulative sum and happend times
-        cum_sum[0] = 1
-
-        def dfs(node, prev_sum):
-            nonlocal res
-            if not node: return
-
-            curr_sum = prev_sum + node.val
-            res += cum_sum[curr_sum - target]
-            cum_sum[curr_sum] += 1
-
-            dfs(node.left, curr_sum)
-            dfs(node.right, curr_sum)
-
-            cum_sum[curr_sum] -= 1  # backtrack
-
-        dfs(root, 0)
-        return res
-
-
-# https://leetcode.com/problems/sum-root-to-leaf-numbers/
-class Solution129:
-    def sumNumbers(self, root: TreeNode) -> int:
-        res = 0
-
-        def dfs(node, prev_sum):
-            nonlocal res
-            if not node: return
-
-            if not node.left and not node.right:
-                res += prev_sum + node.val
-                return
-
-            next_sum = (prev_sum + node.val) * 10
-
-            dfs(node.left, next_sum)
-            dfs(node.right, next_sum)
-
-        dfs(root, 0)
-        return res
-
-
-# https://leetcode.com/problems/path-sum-iv/
-class Solution666:
-    def pathSum(self, nums: List[int]) -> int:
-
-        depth_pos_val = defaultdict(Counter)
-
-        def parse(num):  # depth, pos, value
-            return num // 100 - 1, num // 10 % 10 - 1, num % 10  # 113 -> 0, 0, 3
-
-        def exist(depth, pos):  # similar to check the tree node exist
-            return depth in depth_pos_val and pos in depth_pos_val[depth]
-
-        for num in nums:  # build the tree using map
-            depth, pos, val = parse(num)  # 113 -> 0, 0, 3
-            depth_pos_val[depth][pos] = val
-
-        res = 0
-
-        def dfs(depth, pos, preSum):  # tree path sum
-            nonlocal res
-            if not exist(depth, pos): return
-
-            curr = preSum + depth_pos_val[depth][pos]
-            if not exist(depth + 1, 2 * pos) and not exist(depth + 1, 2 * pos + 1):  # leaf
-                res += curr
-                return
-
-            dfs(depth + 1, 2 * pos, curr)
-            dfs(depth + 1, 2 * pos + 1, curr)
-
-        depth, pos, _ = parse(nums[0])
-        dfs(depth, pos, 0)
         return res
 
 
@@ -262,54 +146,6 @@ class Solution663:
         return total / 2.0 in seen
 
 
-# https://leetcode.com/problems/average-of-levels-in-binary-tree/
-class Solution637:
-    def averageOfLevels(self, root: TreeNode) -> List[float]:
-        if not root: return []
-        res = []
-        queue = [root]
-
-        while queue:
-            size = len(queue)
-            s, count = 0, 0
-            for _ in range(size):
-                node = queue.pop(0)
-                s += node.val
-                count += 1
-                if node.left: queue.append(node.left)
-                if node.right: queue.append(node.right)
-
-            res.append(s / count)
-
-        return res
-
-
-# https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
-class Solution1161:
-    def maxLevelSum(self, root: TreeNode) -> int:
-        max_sum = float('-inf')
-        level = 1
-        res = 1
-        queue = [root]
-
-        while queue:
-            size = len(queue)
-            s = 0
-            for _ in range(size):
-                node = queue.pop(0)
-                s += node.val
-
-                if node.left: queue.append(node.left)
-                if node.right: queue.append(node.right)
-
-            if s > max_sum:
-                max_sum = s
-                res = level
-            level += 1
-
-        return res
-
-
 # https://leetcode.com/problems/most-frequent-subtree-sum/
 class Solution508:
     def findFrequentTreeSum(self, root: TreeNode) -> List[int]:
@@ -321,7 +157,7 @@ class Solution508:
             count[s] += 1
             return s
 
-        count = collections.Counter()
+        count = Counter()
         dfs(root)
         maxCount = max(count.values())
         return [s for s in count if count[s] == maxCount]
@@ -342,3 +178,86 @@ class Solution979:  # this is not related to statistics but divide and conquer
 
         dfs(root)
         return res
+
+
+# https://leetcode.com/problems/longest-univalue-path/
+class Solution687:
+    def longestUnivaluePath(self, root: TreeNode) -> int:
+        res = -inf
+
+        def dfs(node):
+            nonlocal res
+            if not node: return None, 0
+
+            l_val, l_count = dfs(node.left)
+            r_val, r_count = dfs(node.right)
+
+            if l_val == r_val == node.val:
+                res = max(res, l_count + r_count + 1)
+                return node.val, max(l_count, r_count) + 1
+            elif l_val == node.val:
+                res = max(res, l_count + 1)
+                return node.val, l_count + 1
+            elif r_val == node.val:
+                res = max(res, r_count + 1)
+                return node.val, r_count + 1
+            else:
+                return node.val, 1
+
+        dfs(root)
+        return res - 1 if res > -inf else 0
+
+
+# https://leetcode.com/problems/delete-leaves-with-a-given-value/
+class Solution1325:
+    def removeLeafNodes(self, root: TreeNode, target: int) -> TreeNode:
+
+        def dfs(node):
+            if not node: return False
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            if left: node.left = None
+            if right: node.right = None
+
+            if node.val == target and not node.left and not node.right:
+                return True
+
+            return False
+
+        dfs(root)
+        if root.val == target and not root.left and not root.right: return None
+        return root
+
+
+# https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
+class Solution1315:
+    def sumEvenGrandparent(self, root: TreeNode) -> int:  # this method is not generic.
+        def dfs(node, p, gp):
+            if not node: return 0
+            res = node.val if gp % 2 == 0 else 0
+            res += dfs(node.left, node.val, p)
+            res += dfs(node.right, node.val, p)
+
+            return res
+
+        return dfs(root, 1, 1)
+
+    def sumEvenGrandparent_right(self, root: TreeNode) -> int:  # this is better
+
+        if not root: return 0
+
+        res = 0
+        if root.val % 2 == 0:
+            grandChildren = self.getNodes(root, 2)
+            for gc in grandChildren:
+                res += gc.val
+
+        return self.sumEvenGrandparent(root.left) + self.sumEvenGrandparent(root.right)
+
+    def getNodes(self, node, depth) -> List['TreeNode']:
+        if not node: return []
+        if depth == 0: return [node]
+
+        return self.getNodes(node.left, depth - 1) + self.getNodes(node.right, depth - 1)

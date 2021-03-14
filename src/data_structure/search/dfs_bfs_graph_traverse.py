@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, deque
 from typing import *
 
 
@@ -181,6 +181,72 @@ class Solution130:
         for i in range(m):
             for j in range(n):
                 board[i][j] = 'X' if (i, j) not in seen else 'O'
+
+
+# https://leetcode.com/problems/number-of-closed-islands/
+class Solution1254:
+    def closedIsland_dfs(self, grid: List[List[int]]) -> int:
+        seen = set()
+        directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        m, n = len(grid), len(grid[0])
+
+        def dfs(x, y):
+            if x < 0 or y < 0 or x >= m or y >= n or grid[x][y] == 1 or (x, y) in seen: return
+
+            seen.add((x, y))
+            for dx, dy in directions:
+                nx, ny = x + dx, y + dy
+                dfs(nx, ny)
+
+        for i in range(m):
+            dfs(i, 0)
+            dfs(i, n - 1)
+
+        for i in range(n):
+            dfs(0, i)
+            dfs(m - 1, i)
+
+        res = 0
+        for i in range(m):
+            for j in range(n):
+                if (i, j) not in seen and grid[i][j] == 0:
+                    res += 1
+                    dfs(i, j)
+        return res
+
+    def closedIsland_bfs(self, grid: List[List[int]]) -> int:
+        seen = set()
+        directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        m, n = len(grid), len(grid[0])
+
+        def bfs(x, y):
+            if grid[x][y] != 0: return
+            queue = [(x, y)]
+            seen.add((x, y))
+            while queue:
+                x, y = queue.pop(0)
+                for dx, dy in directions:
+                    nx, ny = x + dx, y + dy
+                    if nx < 0 or ny < 0 or nx >= m or ny >= n or (nx, ny) in seen or grid[nx][ny] == 1: continue
+
+                    seen.add((nx, ny))
+                    queue.append((nx, ny))
+
+        for i in range(m):
+            bfs(i, 0)
+            bfs(i, n - 1)
+
+        for i in range(n):
+            bfs(0, i)
+            bfs(m - 1, i)
+
+        res = 0
+        for i in range(m):
+            for j in range(n):
+                if (i, j) not in seen and grid[i][j] == 0:
+                    res += 1
+                    bfs(i, j)
+        return res
 
 
 # https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
@@ -597,11 +663,11 @@ class Solution1291:
 class Solution339:
     def depthSum_dfs(self, nestedList) -> int:  # O(n), O(n)
 
-        def dfs(l, depth):
-            n = len(l)
+        def dfs(nest_list, depth):
+            n = len(nest_list)
             res = 0
             for i in range(n):
-                curr = l[i]
+                curr = nest_list[i]
                 if curr.isInteger():
                     res += curr.getInteger() * depth
                 else:
@@ -970,6 +1036,193 @@ class Solution737:
         for w1, w2 in zip(words1, words2):
             if w1 == w2: continue
             if not bfs(w1, w2):
+                return False
+
+        return True
+
+
+class Node:
+    def __init__(self, val=0, neighbors=None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+
+
+# https://leetcode.com/problems/clone-graph/
+class Solution133:
+    def cloneGraph_dfs(self, node: 'Node') -> 'Node':
+        seen = defaultdict()
+
+        def dfs(node):
+            if not node: return None
+            if node.val in seen: return seen[node.val]
+
+            copied = Node(node.val)
+            seen[node.val] = copied
+            for neighbor in node.neighbors:
+                copied.neighbors.append(dfs(neighbor))
+
+            return copied
+
+        return dfs(node)
+
+    def cloneGraph_bfs(self, node: 'Node') -> 'Node':
+        if not node: return
+        seen = {node: Node(node.val)}
+        queue = [node]
+        while queue:
+            curr = queue.pop(0)
+            for neighbor in curr.neighbors:
+                if neighbor in seen:
+                    seen[curr].neighbors.append(seen[neighbor])
+                    continue
+
+                seen[neighbor] = Node(neighbor.val)
+                seen[curr].neighbors.append(seen[neighbor])
+                queue.append(neighbor)
+
+        return seen[node]
+
+
+# https://leetcode.com/problems/knight-probability-in-chessboard/
+class Solution668:
+    def knightProbability_dfs(self, N: int, K: int, r: int, c: int) -> float:
+        directions = {(dx, dy) for dx in (-2, -1, 1, 2) for dy in (-2, -1, 1, 2) if abs(dx) + abs(dy) == 3}
+
+        def dfs(x, y, k):  # O(8^{N^2K}) can use cache to get O(n^2 * 8 * k)
+            if x < 0 or y < 0 or x >= N or y >= N: return 0
+            if k == 0: return 1
+
+            res = 0
+            for dx, dy in directions:
+                nx, ny = x + dx, y + dy
+                res += dfs(nx, ny, k - 1)
+
+            return res
+
+        return dfs(r, c, K) / 8 ** K
+
+    # This is critical using dict as queue instead of queue to traversal
+    def knightProbability_bfs(self, N: int, K: int, r: int, c: int) -> float:
+        q = {(r, c): 1}
+        level = 0
+        directions = {(dx, dy) for dx in (-2, -1, 1, 2) for dy in (-2, -1, 1, 2) if abs(dx) + abs(dy) == 3}
+        is_in_board = lambda r, c: 0 <= r < N and 0 <= c < N
+        while level < K and q:
+            next_q = defaultdict(int)
+            for coord, count in q.items():
+                x, y = coord
+                for dx, dy in directions:
+                    if is_in_board(x + dx, y + dy):
+                        next_q[(x + dx, y + dy)] += count
+            q = next_q
+            level += 1
+
+        return sum(q.values()) / 8 ** K
+
+
+# https://leetcode.com/problems/the-maze/
+class Solution490:
+    def hasPath(self, maze: List[List[int]], start: List[int], destination: List[int]) -> bool:
+        directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        m, n = len(maze), len(maze[0])
+        seen = set()
+
+        def dfs(x, y):
+            if (x, y) in seen: return False
+            if [x, y] == destination: return True
+
+            seen.add((x, y))
+            for dx, dy in directions:
+                nx, ny = x, y
+                while 0 <= nx + dx < m and 0 <= ny + dy < n and maze[nx + dx][ny + dy] != 1:
+                    nx, ny = nx + dx, ny + dy
+
+                if dfs(nx, ny): return True
+
+            return False
+
+        return dfs(*start)
+
+    def hasPath_bfs(self, maze: List[List[int]], start: List[int], destination: List[int]) -> bool:
+        directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        m, n = len(maze), len(maze[0])
+        queue = [start]
+        seen = set(start)
+        while queue:
+            x, y = queue.pop(0)
+            if [x, y] == destination: return True
+            for dx, dy in directions:
+                nx, ny = x, y
+                while 0 <= nx + dx < m and 0 <= ny + dy < n and maze[nx + dx][ny + dy] != 1:
+                    nx, ny = nx + dx, ny + dy
+
+                if (nx, ny) in seen: continue
+
+                seen.add((nx, ny))
+                queue.append((nx, ny))
+
+        return False
+
+
+# https://leetcode.com/problems/possible-bipartition/
+class Solution886:
+    def possibleBipartition_dfs(self, N, dislikes):
+        graph = defaultdict(set)
+        for a, b in dislikes:
+            graph[a].add(b)
+            graph[b].add(a)
+
+        colors = [0] * N
+
+        def dfs(i, color):
+            if colors[i - 1] == 0:
+                colors[i - 1] = color
+            else:
+                return colors[i - 1] == color
+
+            for dislike in graph[i]:
+                if not dfs(dislike, -color): return False
+
+            return True
+
+        for i in range(1, N + 1):
+            if colors[i - 1] == 0 and not dfs(i, 1):
+                return False
+
+        return True
+
+    def possibleBipartition_bfs(self, N, dislikes):
+        graph = defaultdict(list)
+        for a, b in dislikes:
+            graph[a].append(b)
+            graph[b].append(a)
+
+        colors = [0] * N
+
+        def bfs(i, color):
+            queue = deque([i])
+            while queue:
+                size = len(queue)
+                for _ in range(size):
+                    node = queue.popleft()
+
+                    colors[node - 1] = color
+
+                    for neighbor in graph[node]:
+                        neighbor_color = colors[neighbor - 1]
+                        if neighbor_color != 0:
+                            if neighbor_color == -color:
+                                continue
+                            else:
+                                return False
+                        queue.append(neighbor)
+
+                color = -color
+
+            return True
+
+        for i in range(1, N + 1):
+            if colors[i - 1] == 0 and not bfs(i, 1):
                 return False
 
         return True

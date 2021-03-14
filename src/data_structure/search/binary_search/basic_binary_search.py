@@ -1,5 +1,5 @@
-# https://leetcode.com/problems/leftmost-column-with-at-least-a-one/
 from math import inf
+from typing import List
 
 
 def isBadVersion(version):
@@ -8,7 +8,7 @@ def isBadVersion(version):
 
 # template
 def binary_search(arr, val):
-    l, r = 0, len(arr) - 1
+    l, r = 0, len(arr)  # [l, r)
     while l < r:
         m = (l + r) // 2
         if arr[m] == val: return m
@@ -20,7 +20,7 @@ def binary_search(arr, val):
 
 
 def binary_search_lower_bound(arr, val):
-    l, r = 0, len(arr) - 1
+    l, r = 0, len(arr)  # [l, r)
     while l < r:
         m = (l + r) // 2
         if arr[m] >= val:
@@ -31,7 +31,7 @@ def binary_search_lower_bound(arr, val):
 
 
 def binary_search_upper_bound(arr, val):
-    l, r = 0, len(arr) - 1
+    l, r = 0, len(arr)  # [l, r)
     while l < r:
         m = (l + r) // 2
         if arr[m] > val:
@@ -55,6 +55,22 @@ class Solution278:
         return l
 
 
+# https://leetcode.com/problems/find-peak-element/
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        l, r = 0, n
+
+        while l < r:
+            mid = (l + r) // 2
+
+            if mid + 1 < n and nums[mid] < nums[mid + 1]:
+                l = mid + 1
+            else:
+                r = mid
+
+        return l
+
 # https://leetcode.com/problems/leftmost-column-with-at-least-a-one/
 class Solution1428:
     def leftMostColumnWithOne(self, binaryMatrix: 'BinaryMatrix') -> int:
@@ -62,7 +78,6 @@ class Solution1428:
         res = inf
 
         def find_most_left(row, l, r):
-
             while l < r:
                 m = (l + r) // 2
 
@@ -75,6 +90,6 @@ class Solution1428:
             return inf
 
         for i in range(m):
-            res = min(find_most_left(i, 0, n - 1), res)
+            res = min(find_most_left(i, 0, n), res)
 
         return res if res < inf else -1

@@ -3,7 +3,7 @@ from typing import List
 
 
 # https://leetcode.com/problems/two-sum-less-than-k/
-class Solution1009:
+class Solution1099:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:  # O(range), O(range)
         res = -1
         count = [0] * 1001

@@ -95,49 +95,6 @@ class Solution103:
         return res
 
 
-# https://leetcode.com/problems/check-completeness-of-a-binary-tree/
-class Solution958:
-    def isCompleteTree(self, root: TreeNode) -> bool:
-        nodes = [(root, 1)]
-        seq = 1
-        while nodes:
-            node, v = nodes.pop(0)
-
-            if seq != v: return False
-            seq += 1
-
-            if node.left: nodes.append((node.left, 2 * v))
-            if node.right: nodes.append((node.right, 2 * v + 1))
-
-        return True
-
-
-# https://leetcode.com/problems/maximum-width-of-binary-tree/
-class Solution662:
-    def widthOfBinaryTree(self, root: TreeNode) -> int:
-        if not root:
-            return 0
-
-        res = 0
-        # queue of elements [(node, col_index)]
-        queue = deque()
-        queue.append((root, 0))
-
-        while queue:
-            size = len(queue)
-            _, most_left = queue[0]
-            mark = most_left
-            for _ in range(size):
-                node, mark = queue.popleft()
-                # preparing for the next level
-                if node.left: queue.append((node.left, 2 * mark))
-                if node.right: queue.append((node.right, 2 * mark + 1))
-
-            res = max(res, mark - most_left + 1)
-
-        return res
-
-
 # https://leetcode.com/problems/cousins-in-binary-tree/
 class Solution993:
     def isCousins(self, root: TreeNode, x: int, y: int) -> bool:
@@ -261,5 +218,53 @@ class Solution515:
                 if node.right: queue.append(node.right)
 
             res.append(max_num)
+
+        return res
+
+
+# https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
+class Solution1161:
+    def maxLevelSum(self, root: TreeNode) -> int:
+        max_sum = float('-inf')
+        level = 1
+        res = 1
+        queue = [root]
+
+        while queue:
+            size = len(queue)
+            s = 0
+            for _ in range(size):
+                node = queue.pop(0)
+                s += node.val
+
+                if node.left: queue.append(node.left)
+                if node.right: queue.append(node.right)
+
+            if s > max_sum:
+                max_sum = s
+                res = level
+            level += 1
+
+        return res
+
+
+# https://leetcode.com/problems/average-of-levels-in-binary-tree/
+class Solution637:
+    def averageOfLevels(self, root: TreeNode) -> List[float]:
+        if not root: return []
+        res = []
+        queue = [root]
+
+        while queue:
+            size = len(queue)
+            s, count = 0, 0
+            for _ in range(size):
+                node = queue.pop(0)
+                s += node.val
+                count += 1
+                if node.left: queue.append(node.left)
+                if node.right: queue.append(node.right)
+
+            res.append(s / count)
 
         return res
