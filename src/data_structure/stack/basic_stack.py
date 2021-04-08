@@ -150,3 +150,99 @@ class FreqStack895:
             self.maxfreq -= 1
 
         return x
+
+
+# https://leetcode.com/problems/implement-queue-using-stacks/
+class MyQueue232:
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.stack1 = []
+        self.stack2 = []
+
+    def push(self, x: int) -> None:
+        """
+        Push element x to the back of queue.
+        """
+        self.stack1.append(x)
+
+    def pop(self) -> int:
+        """
+        Removes the element from in front of queue and returns that element.
+        """
+        if self.stack2:
+            return self.stack2.pop()
+
+        while self.stack1:
+            self.stack2.append(self.stack1.pop())
+
+        return self.stack2.pop()
+
+    def peek(self) -> int:
+        """
+        Get the front element.
+        """
+        if self.stack2:
+            return self.stack2[-1]
+
+        while self.stack1:
+            self.stack2.append(self.stack1.pop())
+
+        return self.stack2[-1]
+
+    def empty(self) -> bool:
+        """
+        Returns whether the queue is empty.
+        """
+        return not self.stack1 and not self.stack2
+
+
+# https://leetcode.com/problems/longest-valid-parentheses/
+class Solution32:
+    def longestValidParentheses(self, s: str) -> int:
+        stack = [-1]
+        res = 0
+        for i, c in enumerate(s):
+            if c == '(':
+                stack.append(i)
+            else:
+                stack.pop()
+
+                if stack:
+                    res = max(res, i - stack[-1])
+                else:
+                    stack.append(i)
+
+        return res
+
+    def longestValidParentheses_counter(self, s: str) -> int:
+        l, r, max_len = 0, 0, 0
+
+        for i, c in enumerate(s):
+            if c == '(':
+                l += 1
+            else:
+                r += 1
+
+            if l == r:
+                max_len = max(max_len, r * 2)
+
+            if r > l:
+                l, r = 0, 0
+
+        l, r = 0, 0
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == '(':
+                l += 1
+            else:
+                r += 1
+
+            if l == r:
+                max_len = max(max_len, l * 2)
+
+            if l > r:
+                l, r = 0, 0
+
+        return max_len

@@ -20,7 +20,7 @@ class Solution53:
 
         for i in range(len(nums)):
             curMax = max(nums[i], curMax + nums[i])
-            global_sum = max(maxSum, curMax)
+            maxSum = max(maxSum, curMax)
 
         return maxSum
 
@@ -38,3 +38,16 @@ class Solution918:
 
             total += a
         return max(maxSum, total - minSum) if maxSum > 0 else maxSum
+
+
+# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+class Solution121:
+    def maxProfit(self, prices: List[int]) -> int:
+        profit = [prices[i] - prices[i - 1] for i in range(1, len(prices))]
+
+        curMax, maxSum = -inf, -inf
+        for i in range(len(profit)):
+            curMax = max(profit[i], curMax + profit[i])
+            maxSum = max(maxSum, curMax)
+
+        return max(maxSum, 0)

@@ -68,7 +68,7 @@ class Solution773:
 
                 for nxt in moves[curr]:
                     tmp = list(state)
-                    tmp[cur], tmp[nxt] = tmp[nxt], tmp[cur]
+                    tmp[curr], tmp[nxt] = tmp[nxt], tmp[curr]
                     tmp = ''.join(tmp)
 
                     if tmp in seen: continue

@@ -49,3 +49,30 @@ class Solution1209:
             res += char * count
 
         return res
+
+
+# https://leetcode.com/problems/design-a-stack-with-increment-operation/
+class CustomStack1381:
+
+    def __init__(self, maxSize: int):
+        self.n = maxSize
+        self.stack = []
+        self.inc = []
+
+
+    def push(self, x: int) -> None:
+        if len(self.inc) < self.n:
+            self.stack.append(x)
+            self.inc.append(0)
+
+
+    def pop(self) -> int:
+        if not self.inc: return -1
+        if len(self.inc) > 1:
+            self.inc[-2] += self.inc[-1]
+        return self.stack.pop() + self.inc.pop()
+
+    def increment(self, k: int, val: int) -> None:
+        if self.inc:
+            self.inc[min(k, len(self.inc)) - 1] += val
+

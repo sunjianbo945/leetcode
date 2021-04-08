@@ -1,4 +1,6 @@
+from bisect import bisect_left
 from functools import lru_cache
+from math import inf
 from typing import List
 
 
@@ -169,3 +171,59 @@ class Solution115:
             res += dfs(i, 0)
 
         return res
+
+# https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
+class Solution1155:
+    def numRollsToTarget(self, d: int, f: int, target: int) -> int:
+        # the number of possible ways
+
+        @lru_cache(None)
+        def dfs(d, target):
+            if target <= 0: return 0
+            if d == 1:
+                if 0 < target <= f: return 1
+                return 0
+
+            res = 0
+            for i in range(1, f + 1):
+                res += dfs(d - 1, target - i)
+
+            return res % (10 ** 9 + 7)
+
+        return dfs(d, target)
+
+
+# https://leetcode.com/problems/minimum-window-subsequence/
+class Solution727:
+    def minWindow(self, S: str, T: str) -> str:
+        s_len, t_len = len(S), len(T)
+
+        @lru_cache(None)
+        def dfs(i, j):
+            if j == t_len: return i - 1
+            if i == s_len: return None
+
+            ind = S.find(T[j], i)
+            return dfs(ind + 1, j + 1) if ind != -1 else None
+
+        res_len, res = inf, ''
+        for i in range(s_len):
+            if S[i] == T[0]:
+                last = dfs(i + 1, 1)
+                if last and res_len > last - i + 1:
+                    res_len = last - i + 1
+                    res = S[i:last + 1]
+        return res
+
+
+# https://leetcode.com/problems/maximum-profit-in-job-scheduling/
+class Solution1235:
+    def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
+        start, end, pro = zip(*sorted(zip(startTime, endTime, profit), key=lambda x: x[0]))
+
+        @lru_cache(None)
+        def dfs(i):
+            if i == len(start): return 0
+            j = bisect_left(start, end[i])
+            return max(pro[i] + dfs(j), dfs(i + 1))
+        return dfs(0)

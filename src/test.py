@@ -1,7 +1,8 @@
+from functools import lru_cache
+from random import choice
 from typing import *
 
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.model_selection import train_test_split
+from numpy import std, mean
 
 
 class Pointer:
@@ -40,43 +41,42 @@ class Solution:
 
 Solution().circularArrayLoop([-2, 1, -1, -2, -2])
 
-import queue
 import re
 
 number_or_symbol = re.compile(r'(\d+|[^ 0-9])')
 
-str = "(1+2)*3)"
+str = "(1+2)*3"
 
 
 def eval_str_expr(str_expr: str):
     tokens = re.findall(number_or_symbol, str_expr)
     print(tokens)
     expr_queue = _process_tokens(tokens)
-    print(tokens)
     return _eval_postfix(expr_queue)
 
 
 def _process_tokens(tokens):
-    stack = []  # save operator
-    output_queue = queue.Queue()  # save numbers
+    print(tokens)
+    operator = []  # save operator
+    res = []  # save numbers
     for token in tokens:
         if token.isnumeric():
-            output_queue.put(token)
-        elif token in '+-*/^':  # operators
-            while stack and stack[-1] in '+-*/^' and _same_or_higher_priority(stack[-1], token):
-                output_queue.put(stack.pop())
-            stack.append(token)
-        elif token == '(':
-            stack.append(token)
-        elif token == ')':
-            # t := stack.pop() <- walrus operator in python 3.8
-            while stack[-1] != '(':
-                output_queue.put(stack.pop())
-    # else such as ' ' will be ignored
-    while stack:
-        output_queue.put(stack.pop())
+            res.append(token)
 
-    return output_queue
+        elif token in '+-*/^(':  # operators
+            while operator and operator[-1] in operator_definition and _same_or_higher_priority(operator[-1], token):
+                res.append(operator.pop())
+            operator.append(token)
+
+        elif token == ')':
+            while operator[-1] != '(':
+                res.append(operator.pop())
+            operator.pop()
+    # else such as ' ' will be ignored
+    while operator:
+        res.append(operator.pop())
+
+    return res
 
 
 def _same_or_higher_priority(op1, op2):  # op1 is same or higher order than op2
@@ -88,33 +88,78 @@ def _same_or_higher_priority(op1, op2):  # op1 is same or higher order than op2
         return op1 == '^'
 
 
+operator_definition = {
+    '+': lambda x, y: x + y,
+    '-': lambda x, y: x - y,
+    '*': lambda x, y: x * y,
+    '/': lambda x, y: x / y,
+    '^': lambda x, y: x ** y
+}
+
+
 def _eval_postfix(postfix_queue):
+    print(postfix_queue)
     operand_stack = []
-    while not postfix_queue.empty():
-        item = postfix_queue.get()
+    while postfix_queue:
+        item = postfix_queue.pop(0)
         if item.isnumeric():
             operand_stack.append(int(item))
-        elif item in '+-*/^':
-            first = operand_stack.pop()
+        else:
             second = operand_stack.pop()
-
-            if item == '+':
-                operand_stack.append(second + first)
-            elif item == '-':
-                operand_stack.append(second - first)
-            elif item == '*':
-                operand_stack.append(second * first)
-            elif item == '/':
-                operand_stack.append(second / first)
-            elif item == '^':
-                operand_stack.append(second ** first)
+            first = operand_stack.pop()
+            operand_stack.append(operator_definition[item](first, second))
 
     return operand_stack.pop()
 
 
 # print(eval_str_expr('(81 * 6) / 42 + (3 - 1)'))
-# print(eval('(81 * 6) / 42 + (3 - 1)'))
+print(eval_str_expr('(81 + 6) / 42 + (3 - 1)'))
+print(eval('(81 + 6) / 42 + (3 - 1)'))
+
 # print(eval_str_expr('3+2*2'))
 # print(eval_str_expr('3-(2-(1+2))'))
 # print(eval_str_expr('3+2*2'))
-print(eval_str_expr('3*(2+2)'))
+# print(eval_str_expr('3*(2+2)'))
+
+
+print(std([1, 2, 3, 4, 5, 6]))
+print(mean([1, 2, 3, 4, 5, 6]))
+
+
+def calculate():
+    count = 0
+    total = 1000
+    idx = 0
+    num = [1, 2, 3, 4, 5, 6]
+    num2 = [0, 1]
+    while idx < total:
+
+        sum1 = sum([choice(num) for _ in range(10000)])
+        sum2 = sum([choice(num2) for _ in range(60000)])
+        if sum1 > sum2:
+            count += 1
+        else:
+            print(sum1, sum2)
+
+        idx += 1
+
+    print(count / total)
+
+
+calculate()
+
+
+def fib(x):
+
+    @lru_cache(None)
+    def dfs(num):
+        if num <= 1: return 1
+        return dfs(num - 1) + dfs(num - 2)
+
+    # x = 100
+    # dfs(99) + dfs(98)
+    # dfs(99) = dfs(98) + dfs(97)
+    # dfs(4) = dfs(3) + dfs(2)
+    # dfs(3) = dfs(2) + dfs(1)
+    # dfs(2) = dfs(1) + dfs(0)
+    return dfs(x)

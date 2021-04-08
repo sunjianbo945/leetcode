@@ -115,7 +115,7 @@ class Solution897:
 
 
 # https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
-class Solution:
+class Solution1305:
     def getAllElements(self, root1: TreeNode, root2: TreeNode) -> List[int]:
         def inorder(root, lst):
             if not root: return

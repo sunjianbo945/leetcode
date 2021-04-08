@@ -1,4 +1,5 @@
 from collections import defaultdict
+from math import inf
 from typing import List
 
 
@@ -48,6 +49,13 @@ class StockSpanner901:
         self.stack.append([price, res])
         return res
 
+# https://www.includehelp.com/algorithms/find-nearest-greatest-neighbours-of-each-element-in-an-array.aspx
+
+
+
+
+
+
 
 # https://leetcode.com/problems/largest-rectangle-in-histogram/
 class Solution84:
@@ -63,5 +71,90 @@ class Solution84:
                 res = max(res, height * width)
 
             stack.append(idx)
+
+        return res
+
+
+# https://leetcode.com/problems/maximal-rectangle/
+class Solution85:
+    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+        if not matrix: return 0
+        n = len(matrix[0])
+        if n == 0: return 0
+
+        def hist(arr):
+            arr = arr + [0]
+            stack = [-1]
+            res = 0
+            for i in range(len(arr)):
+                while len(stack) > 1 and arr[stack[-1]] > arr[i]:
+                    pos = stack.pop()
+                    res = max(res, (i - stack[-1] - 1) * arr[pos])
+
+                stack.append(i)
+
+            return res
+
+        res = 0
+        h = [0] * n
+        for i in range(len(matrix)):
+            for j in range(n):
+                if matrix[i][j] == '1':
+                    h[j] += 1
+                else:
+                    h[j] = 0
+
+            res = max(res, hist(h))
+
+        return res
+
+# https://leetcode.com/problems/remove-k-digits/
+class Solution402:
+    def removeKdigits(self, nums: str, k: int) -> str:
+        stack = []  # increase sequence
+
+        for num in nums:
+            while k and stack and stack[-1] > num:
+                stack.pop()
+                k -= 1
+
+            stack.append(num)
+
+        stack = stack[:-k] if k else stack
+
+        return "".join(stack).lstrip('0') or "0"
+
+
+# https://leetcode.com/problems/daily-temperatures/
+class Solution739:
+    def dailyTemperatures(self, T: List[int]) -> List[int]:
+        stack = []
+        n = len(T)
+        res = [0] * n
+
+        for i, t in enumerate(T):
+            while stack and T[stack[-1]] < t:  # decreasing stack
+                last_idx = stack.pop()
+                res[last_idx] = i - last_idx
+
+            stack.append(i)
+
+        return res
+
+
+# https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
+class Solution1130:
+    def mctFromLeafValues(self, arr: List[int]) -> int:
+        stack = [inf]
+        res = 0
+        for i, num in enumerate(arr):
+            while stack and stack[-1] < num:  # decreasing
+                local_min = stack.pop()
+                res += min(num, stack[-1]) * local_min
+
+            stack.append(num)
+
+        while len(stack) > 2:
+            res += stack.pop() * stack[-1]
 
         return res

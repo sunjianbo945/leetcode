@@ -210,7 +210,7 @@ class Solution317:
         m, n = len(grid), len(grid[0])
         directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
         dis = [[0] * n for _ in range(m)]
-        seen = defaultdict(int)  # the i, j has been visited k times
+        seen = Counter()  # the i, j has been visited k times
 
         def bfs(x, y):  # x,y is building
             nonlocal num_house

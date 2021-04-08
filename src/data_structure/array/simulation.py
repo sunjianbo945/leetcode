@@ -17,3 +17,18 @@ class Solution649:
                 dire.append(d + n)
 
         return 'Radiant' if radiant else 'Dire'
+
+
+# https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+class Solution1342:
+    def numberOfSteps(self, num: int) -> int:
+        step = 0
+        while num:
+            num, r = divmod(num, 2)
+            if r == 1:
+                step += 1
+
+            if num != 0:
+                step += 1
+
+        return step

@@ -1,7 +1,8 @@
-from math import gcd
-
 # https://leetcode.com/problems/palindrome-number/
+from bisect import bisect_left, bisect
 from typing import List
+
+from math import gcd
 
 
 class Solution9:
@@ -79,3 +80,68 @@ class Solution856:
                 res += 2 ** d
 
         return res
+
+
+# https://leetcode.com/problems/moving-average-from-data-stream/
+class MovingAverage346:
+
+    def __init__(self, size: int):
+        """
+        Initialize your data structure here.
+        """
+        self.size = 0
+        self.capacity = size
+        self.total = 0
+        self.arr = []
+
+    def next(self, val: int) -> float:
+
+        if self.size < self.capacity:
+            self.total += val
+            self.size += 1
+            self.arr.append(val)
+        else:
+            self.total += val - self.arr.pop(0)
+            self.arr.append(val)
+
+        return self.total / self.size
+
+
+# https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+class Solution1287:
+    def findSpecialInteger(self, arr: List[int]) -> int:
+        quarter = len(arr) // 4
+
+        if quarter == 0: return arr[0]
+
+        for i in range(quarter, len(arr), quarter):
+            if bisect(arr, arr[i]) - bisect_left(arr, arr[i]) > quarter:
+                return arr[i]
+
+        return arr[-1]
+
+
+# https://leetcode.com/problems/convert-integer-to-the-sum-of-two-no-zero-integers/
+class Solution1317:
+    def getNoZeroIntegers(self, n: int) -> List[int]:
+        def hasZero(num):
+            if num == 0: return True
+            while num:
+                if num % 10 == 0:
+                    return True
+
+                num = num // 10
+
+            return False
+
+        for i in range(1, n):
+            if not hasZero(i) and not hasZero(n - i):
+                return [i, n - i]
+
+        return [-1, -1]
+
+
+# https://leetcode.com/problems/single-number-ii/
+class Solution137:
+    def singleNumber(self, nums: List[int]) -> int:
+        return (sum(set(nums))*3 - sum(nums))//2

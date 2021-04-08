@@ -3,7 +3,6 @@ from random import randint
 
 class Solution:
     def sort(self, array):
-
         return self.quicksort(array, 0, len(array) - 1)
 
     def quicksort(self, array, start, end):

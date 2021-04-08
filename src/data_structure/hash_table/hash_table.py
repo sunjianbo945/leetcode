@@ -1,4 +1,7 @@
+import collections
+import itertools
 from collections import defaultdict, Counter
+from random import choice
 from typing import List
 
 
@@ -156,3 +159,191 @@ class Solution734:
                 return False
 
         return True
+
+
+# https://leetcode.com/problems/design-hashmap/
+class MyHashMap706:
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.space = 1000
+        self.hash_table = [Node(-1, -1)] * self.space
+
+    def put(self, key: int, value: int) -> None:
+        """
+        value will always be non-negative.
+        """
+        pos = key % self.space
+        head = self.hash_table[pos]
+        curr = head
+
+        while curr.next:
+            if curr.next.key == key:
+                curr.next.val = value
+                return
+            curr = curr.next
+
+        curr.next = Node(key, value)
+
+    def get(self, key: int) -> int:
+        """
+        Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
+        """
+        pos = key % self.space
+        head = self.hash_table[pos]
+        curr = head
+
+        while curr.next:
+            if curr.next.key == key:
+                return curr.next.val
+            curr = curr.next
+
+        return -1
+
+    def remove(self, key: int) -> None:
+        """
+        Removes the mapping of the specified value key if this map contains a mapping for the key
+        """
+        pos = key % self.space
+        head = self.hash_table[pos]
+        curr = head
+
+        while curr.next:
+            if curr.next.key == key:
+                curr.next = curr.next.next
+                return
+            curr = curr.next
+
+
+class Node:
+    def __init__(self, key, val):
+        self.key = key
+        self.val = val
+        self.next = None
+
+
+# https://leetcode.com/problems/subdomain-visit-count/
+class Solution811:
+    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+
+        domain_count = Counter()
+        for cd in cpdomains:
+            count, domain = cd.split(' ')
+            parts = domain.split('.')
+            for i in range(len(parts)):
+                curr = '.'.join(parts[i:])
+                domain_count[curr] += int(count)
+
+        return [f'{count} {domain}' for domain, count in domain_count.items()]
+
+
+
+# https://leetcode.com/problems/insert-delete-getrandom-o1/
+class RandomizedSet380:
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.dict = {}  # insert and delete O(1)
+        self.arr = []  # O(1) for get random
+
+    def insert(self, val: int) -> bool:
+        """
+        Inserts a value to the set. Returns true if the set did not already contain the specified element.
+        """
+        if val not in self.dict:
+            self.dict[val] = len(self.arr)
+            self.arr.append(val)
+            return True
+        return False
+
+    def remove(self, val: int) -> bool:
+        """
+        Removes a value from the set. Returns true if the set contained the specified element.
+        """
+        if val in self.dict:
+            curr_idx = self.dict[val]
+
+            self.dict[self.arr[-1]] = curr_idx
+            self.arr[curr_idx] = self.arr[-1]
+
+            self.arr.pop()
+            del self.dict[val]
+            return True
+        return False
+
+    def getRandom(self) -> int:
+        """
+        Get a random element from the set.
+        """
+        return choice(self.arr)
+
+
+# https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+class RandomizedCollection381:
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        # here need a set instead of list since the after a free insert and delete the order may change
+        self.dict = defaultdict(set)  # insert and delete O(1).
+        self.arr = []  # O(1) for get random
+
+    def insert(self, val: int) -> bool:
+        """
+        Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
+        """
+        self.dict[val].add(len(self.arr))
+        self.arr.append(val)
+        return len(self.dict[val]) == 1
+
+    def remove(self, val: int) -> bool:
+        """
+        Removes a value from the collection. Returns true if the collection contained the specified element.
+        """
+        if not self.dict[val]: return False
+        last_num = self.arr[-1]
+        removed_idx = self.dict[val].pop()
+
+        self.dict[last_num].add(removed_idx)
+        self.arr[removed_idx] = last_num
+
+        self.dict[last_num].discard(len(self.arr) - 1)
+        self.arr.pop()
+
+        return True
+
+    def getRandom(self) -> int:
+        """
+        Get a random element from the collection.
+        """
+        return choice(self.arr)
+
+
+
+# https://leetcode.com/problems/swap-for-longest-repeated-character-substring/
+class Solution1156:
+    def maxRepOpt1(self, text: str) -> int:
+        # print([[a,list(b)] for a,b in itertools.groupby(text)])
+        A = [[c, len(list(g))] for c, g in itertools.groupby(text)]
+        count = collections.Counter(text)
+
+        res = max(min(k + 1, count[c]) for c, k in A)
+        # print(res)
+
+        for i in range(1, len(A) - 1):
+
+            if A[i - 1][0] == A[i + 1][0] and A[i][1] == 1:
+                res = max(res, min(A[i - 1][1] + A[i + 1][1] + 1, count[A[i + 1][0]]))
+
+        return res
+
+# https://leetcode.com/problems/single-number-iii/
+class Solution260:
+    def singleNumber(self, nums: int) -> List[int]:
+        hashmap = Counter(nums)
+        return [x for x in hashmap if hashmap[x] == 1]

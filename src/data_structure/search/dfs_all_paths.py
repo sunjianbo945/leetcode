@@ -171,3 +171,76 @@ class Solution282:
 
         dfs(0, 0, 0, '')
         return res
+
+
+# https://leetcode.com/problems/flatten-nested-list-iterator/
+class NestedIterator341:
+    def __init__(self, nestedList: ['NestedInteger']):
+        def dfs(nl):
+            res = []
+            for ni in nl:
+                if ni.isInteger():
+                    res.append(ni.getInteger())
+                else:
+                    res.extend(dfs(ni.getList()))
+
+            return res
+
+        self.arr = dfs(nestedList)
+        self.pos = 0
+
+    def next(self) -> int:
+        self.pos += 1
+        return self.arr[self.pos - 1]
+
+    def hasNext(self) -> bool:
+        return self.pos != len(self.arr)
+
+
+# https://leetcode.com/problems/sudoku-solver/
+class Solution37:
+    def solveSudoku(self, board: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        rows = [set() for i in range(10)]
+        cols = [set() for i in range(10)]
+        boxes = [set() for i in range(10)]
+
+        m, n = len(board), len(board[0])
+
+        for i in range(m):
+            for j in range(n):
+                curr = board[i][j]
+                if curr != '.':
+                    rows[i].add(int(curr))
+                    cols[j].add(int(curr))
+                    boxes[i // 3 * 3 + j // 3].add(int(curr))
+
+        def dfs(r, c):
+            if r >= m: return True
+            if c >= n: return dfs(r + 1, 0)
+
+            if board[r][c] != '.':
+                return dfs(r, c + 1)
+
+            b_idx = r // 3 * 3 + c // 3
+            for i in range(1, 10):
+                if i in rows[r] or i in cols[c] or i in boxes[b_idx]: continue
+
+                board[r][c] = f'{i}'
+                rows[r].add(i)
+                cols[c].add(i)
+                boxes[b_idx].add(i)
+
+                if dfs(r, c + 1):
+                    return True
+
+                board[r][c] = '.'
+                rows[r].remove(i)
+                cols[c].remove(i)
+                boxes[b_idx].remove(i)
+
+            return False
+
+        dfs(0, 0)

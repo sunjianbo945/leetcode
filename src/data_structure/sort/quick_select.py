@@ -23,7 +23,7 @@ class Solution215:
             return self.quickSelect(nums, left, mid - 1, n)
 
     def partition(self, nums, l, r):
-
+        last = r
         target = nums[r]
         r -= 1
 
@@ -39,7 +39,7 @@ class Solution215:
                 l += 1
                 r -= 1
 
-        nums[l], nums[r] = nums[r], nums[l]
+        nums[l], nums[last] = nums[last], nums[l]
         return l
 
 

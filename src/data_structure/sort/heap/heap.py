@@ -2,110 +2,7 @@ from collections import *
 from heapq import *
 from typing import List
 
-# https://leetcode.com/problems/k-closest-points-to-origin/
 from src.data_structure.linkedList.model import ListNode
-
-
-class Solution973:
-    def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:  # O(nlogk), O(k)
-        heap = []  # max heap
-        for x, y in points:
-            dis = x * x + y * y
-            heappush(heap, (-dis, x, y))
-
-            if len(heap) > K:
-                heappop(heap)
-
-        return [[x, y] for ids, x, y in heap]
-
-
-# https://leetcode.com/problems/kth-largest-element-in-an-array/
-class Solution215:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        heap = []  # min heap
-        for x in nums:
-            heappush(heap, x)
-
-            if len(heap) > k:
-                heappop(heap)
-
-        return heappop(heap)
-
-
-# https://leetcode.com/problems/third-maximum-number/
-class Solution414:
-    def thirdMax(self, nums: List[int]) -> int:
-        heap = []  # min heap
-        for x in set(nums):
-            heappush(heap, x)
-
-            if len(heap) > 3:
-                heappop(heap)
-
-        return heappop(heap) if len(heap) >= 3 else max(heap)
-
-
-# https://leetcode.com/problems/top-k-frequent-elements/
-class Solution347:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:  # O(nlogk) O(n)
-        nums_count = Counter(nums)
-        heap = []  # min heap
-        for num, count in nums_count.items():
-
-            heappush(heap, (count, num))
-            if len(heap) > k:
-                heappop(heap)
-
-        return [num for count, num in heap]
-
-
-class Node:
-    def __init__(self, count, word):
-        self.count = count
-        self.word = word
-
-    def __lt__(self, other):
-        if self.count < other.count:
-            return True
-        elif self.count > other.count:
-            return False
-        else:
-            return self.word > other.word
-
-
-# https://leetcode.com/problems/top-k-frequent-words/
-class Solution692:  # customize heap comparison
-    def topKFrequent(self, words: List[str], k: int) -> List[str]:
-        word_count = Counter(words)
-        heap = []
-
-        for word, count in word_count.items():
-            heappush(heap, Node(count, word))
-
-            if len(heap) > k: heappop(heap)
-
-        return [heappop(heap).word for _ in range(len(heap))][::-1]
-
-
-# https://leetcode.com/problems/kth-largest-element-in-a-stream/
-class KthLargest703:
-
-    def __init__(self, k: int, nums: List[int]):
-        self.min_heap = []  # store the largest k numbers
-        self.max_heap = []  # store the first k smaller numbers
-        self.k = k
-        for num in nums:
-            self.add(num)
-
-    def add(self, val: int) -> int:
-        heappush(self.max_heap, -val)
-        val = -heappop(self.max_heap)
-        heappush(self.min_heap, val)
-
-        if len(self.min_heap) > self.k:
-            heappush(self.max_heap, -heappop(self.min_heap))
-
-        return self.min_heap[0]
 
 
 class Interval:
@@ -185,3 +82,143 @@ class Solution23:
                 heappush(heap, (node.next.val, k, node.next))
 
         return dummy.next
+
+
+# https://leetcode.com/problems/ipo/
+class Solution502:
+    def findMaximizedCapital(self, k: int, W: int, Profits: List[int], Capital: List[int]) -> int:
+        if W >= max(Capital):
+            return W + sum(nlargest(k, Profits))
+
+        n = len(Profits)
+        projects = [(Capital[i], Profits[i]) for i in range(n)]
+        projects.sort(key=lambda x: x[0], reverse=True)
+
+        available = []
+        while k > 0:
+            while projects and projects[-1][0] <= W:
+                capital, profit = projects.pop()
+                heappush(available, -profit)  # max heap
+
+            if available:
+                W -= heappop(available)
+            else:
+                break
+            k -= 1
+        return W
+
+
+# https://leetcode.com/problems/most-profit-assigning-work/
+class Solution826:
+    def maxProfitAssignment(self, d: List[int], p: List[int], worker: List[int]) -> int:
+        max_profit = []
+        for diff, profit in zip(d, p):
+            heappush(max_profit, (-profit, diff))  # max profit heap
+
+        res = 0
+        for w_d in sorted(worker, reverse=True):
+            while max_profit and w_d < max_profit[0][1]:
+                heappop(max_profit)
+
+            res -= max_profit[0][0] if max_profit else 0
+
+        return res
+
+
+# https://leetcode.com/problems/trapping-rain-water-ii/
+class Solution407:
+    def trapRainWater(self, heightMap: List[List[int]]) -> int:
+        seen = set()
+        m, n = len(heightMap), len(heightMap[0])
+        directions = [[0, 1], [0, -1], [-1, 0], [1, 0]]
+        heap = []
+        for i in range(n):
+            seen.add((0, i))
+            seen.add((m - 1, i))
+            heappush(heap, (heightMap[0][i], 0, i))
+            heappush(heap, (heightMap[m - 1][i], m - 1, i))
+
+        for i in range(1, m - 1):
+            seen.add((i, 0))
+            seen.add((i, n - 1))
+            heappush(heap, (heightMap[i][0], i, 0))
+            heappush(heap, (heightMap[i][n - 1], i, n - 1))
+
+        round_min = 0
+        res = 0
+        while heap:
+            h, x, y = heappop(heap)
+            round_min = max(round_min, h)
+
+            for dx, dy in directions:
+                nx, ny = x + dx, y + dy
+
+                if nx < 0 or ny < 0 or nx >= m or ny >= n or (nx, ny) in seen: continue
+
+                seen.add((nx, ny))
+                diff = round_min - heightMap[nx][ny]
+                res += diff if diff > 0 else 0
+                heappush(heap, (heightMap[nx][ny], nx, ny))
+
+        return res
+
+
+# https://leetcode.com/problems/campus-bikes/
+class Solution1057:
+    def assignBikes(self, workers: List[List[int]], bikes: List[List[int]]) -> List[int]:
+        distances = []
+
+        for i, worker in enumerate(workers):
+            for j, bike in enumerate(bikes):
+                distance = abs(worker[0] - bike[0]) + abs(worker[1] - bike[1])
+                distances.append((distance, i, j))
+
+            # Sort the tuples
+        distances.sort()
+
+        result = [-1] * len(workers)
+        bike_taken = set()  # Mark a bike as taken by putting it in this set as we traverse the tuples from shortest distance onwards.
+        for distance, i, j in distances:
+            # print(distance, i, j)
+            if result[i] == -1 and j not in bike_taken:
+                result[i] = j
+                bike_taken.add(j)
+        return result
+
+
+# https://leetcode.com/problems/high-five/
+class Solution1086:
+    def highFive(self, items: List[List[int]]) -> List[List[int]]:
+        id_score = defaultdict(list)
+
+        for curr_id, score in items:
+            scores = id_score[curr_id]
+            heappush(scores, score)
+
+            if len(scores) > 5:
+                heappop(scores)
+
+        res = []
+        for curr_id in sorted(id_score):
+            res.append([curr_id, int(sum(id_score[curr_id]) / 5)])
+
+        return res
+
+
+# https://leetcode.com/problems/minimum-cost-to-connect-sticks/
+class Solution1167:
+    def connectSticks(self, sticks: List[int]) -> int:
+        if len(sticks) <= 1: return 0
+        heap = []
+        for stick in sticks:
+            heappush(heap, stick)
+
+        res = 0
+        while len(heap) > 1:
+            n1 = heappop(heap)
+            n2 = heappop(heap)
+            res += n1 + n2
+            heappush(heap, n1 + n2)
+
+        return res
+

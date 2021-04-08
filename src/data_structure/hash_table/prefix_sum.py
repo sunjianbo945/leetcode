@@ -192,3 +192,19 @@ class Solution724:
             if left_sum - nums[i] == total - left_sum:
                 return i
         return -1
+
+
+# https://leetcode.com/problems/4sum-ii/
+class Solution454:
+    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
+        res, m = 0, defaultdict(int)
+        for a in A:
+            for b in B:
+                r = a + b
+                m[r] += 1
+
+        for c in C:
+            for d in D:
+                res += m[-(c + d)]
+
+        return res

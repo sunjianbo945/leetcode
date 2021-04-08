@@ -1,46 +1,39 @@
-class Solution:
-    """
-    @param n: An integer
-    @param nums: An array
-    @return: the Kth largest element
-    """
+from typing import List
 
-    def kthLargestElement(self, n, nums):
-        # write your code here
 
-        return self.quickSelect(nums, 0, len(nums) - 1, len(nums) - n)
+# https://leetcode.com/problems/kth-largest-element-in-an-array/
+class Solution215:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return self.quickSelect(nums, 0, len(nums) - 1, len(nums) - k)
 
-    def quickSelect(self, nums, left, right, n):
-
-        mid = self.partition(nums, left, right)
+    def quickSelect(self, nums, l, r, n): # O(n) on average O(n^2) on worst case
+        mid = self.partition(nums, l, r)
 
         if n == mid:
             return nums[mid]
         elif n > mid:
-            return self.quickSelect(nums, mid + 1, right, n)
+            return self.quickSelect(nums, mid + 1, r, n)
         else:
-            return self.quickSelect(nums, left, mid - 1, n)
+            return self.quickSelect(nums, l, mid - 1, n)
 
-    def partition(self, nums, left, right):
+    def partition(self, nums, l, r):
+        pviot = r
+        target = nums[pviot]
+        r -= 1
 
-        target = nums[right]
-        end = right - 1
-        start = left
+        while l <= r:  # finally l is on the right of r
+            while l <= r and nums[l] < target:
+                l += 1
 
-        while start <= end:
+            while l <= r and nums[r] >= target:
+                r -= 1
 
-            while start <= end and nums[start] < target:
-                start += 1
+            if l <= r:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+                r -= 1
 
-            while start <= end and nums[end] >= target:
-                end -= 1
-
-            if start <= end:
-                nums[start], nums[end] = nums[end], nums[start]
-                start += 1
-                end -= 1
-
-        nums[start], nums[right] = nums[right], nums[start]
-        return start
+        nums[l], nums[pviot] = nums[pviot], nums[l]
+        return l
 
 print(Solution().kthLargestElement(3,[9,3,2,4,8]))
