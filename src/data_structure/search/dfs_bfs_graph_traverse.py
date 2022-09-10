@@ -32,6 +32,34 @@ class Solution200:
 
         return res
 
+    def numIslands_dfs2(self, grid: List[List[str]]) -> int:  # O(m*n), O(m*n)
+        m, n = len(grid), len(grid[0])
+        seen = set()  # record all island has visited
+        direction = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+
+        def dfs(x, y):
+            stack = [(x, y)]
+            seen.add((x, y))
+
+            while stack:
+                x, y = stack.pop()
+                for dx, dy in direction:
+                    nx, ny = x + dx, y + dy
+                    if nx < 0 or ny < 0 or nx >= m or ny >= n \
+                            or grid[nx][ny] == '0' or (nx, ny) in seen: continue
+
+                    seen.add((nx, ny))
+                    stack.append((nx, ny))
+
+        res = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1' and (i, j) not in seen:
+                    dfs(i, j)
+                    res += 1
+
+        return res
+
     def numIslands_dfs(self, grid: List[List[str]]) -> int:  # O(m*n), O(m*n)
         m, n = len(grid), len(grid[0])
         seen = set()  # record all island has visited

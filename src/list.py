@@ -88,16 +88,16 @@
 # print(a[:-2])
 
 
-def fun(x):
-    x.append(3)
-
-
-def fun2():
-    x=[]
-    fun(x)
-    print(x)
-
-fun2()
+# def fun(x):
+#     x.append(3)
+#
+#
+# def fun2():
+#     x=[]
+#     fun(x)
+#     print(x)
+#
+# fun2()
 #
 # class person:
 #     def __init__(self,first_name, last_name):
@@ -225,7 +225,3 @@ fun2()
 #             return True
 #
 #     return False
-
-
-
-

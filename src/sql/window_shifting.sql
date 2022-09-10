@@ -74,7 +74,6 @@ visited_on is the date on which the customer with ID (customer_id) have visited 
 amount is the total paid by a customer.
 
 
-
 You are the restaurant owner and you want to analyze a possible expansion (there will be at least one customer every day).
 
 Write an SQL query to compute moving average of how much customer paid in a 7 days window (current day + 6 days before) .
@@ -84,7 +83,6 @@ The query result format is in the following example:
 Return result table ordered by visited_on.
 
 average_amount should be rounded to 2 decimal places, all dates are in the format ('YYYY-MM-DD').
-
 
 
 Customer table:

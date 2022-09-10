@@ -148,7 +148,7 @@ select country_name,
     end as weather_type
 from Countries a join Weather b on a.country_id = b.country_id
 where day between '2019-11-01' and '2019-11-30'
-group by a.country_id, country_name
+group by country_name
 ------------------------------------------------------------------------------------------------------------------------
 Table Variables:
 

@@ -268,3 +268,33 @@ class Solution637:
             res.append(s / count)
 
         return res
+
+
+# https://leetcode.com/problems/validate-binary-tree-nodes/
+class Solution1361:
+    def validateBinaryTreeNodes(self, n: int, leftChild: List[int], rightChild: List[int]) -> bool:
+
+        root = 0
+        childrenNodes = set(leftChild + rightChild)
+        for i in range(n):
+            if i not in childrenNodes:
+                root = i
+
+        seen = {root}
+        queue = deque([root])
+
+        while queue:
+            node = queue.popleft()
+            l = leftChild[node]
+            r = rightChild[node]
+            if l != -1:
+                if l in seen: return False
+                queue.append(l)
+                seen.add(l)
+
+            if r != -1:
+                if r in seen: return False
+                queue.append(r)
+                seen.add(r)
+
+        return len(seen) == n

@@ -31,3 +31,32 @@ def main():
 
 if __name__=='__main__':
     main()
+
+
+def cojw(s:str):
+    if s.startswith('*'):
+        chars = s[1:].split()
+        return ' '.join([c[0].upper() + c[1:-1] + c[-1].upper() if len(c) > 1 else c[0].upper() for c in chars])
+    else:
+        return '.'.join(s.split())
+
+
+def cojw(s:str):
+    if s.startswith('*'):
+        chars = s[1:].split()
+        return ' '.join([c[0].upper() + c[1:-1] + c[-1].upper() if len(c) > 1 else c[0].upper() for c in chars])
+    else:
+        return '.'.join(s.split())
+
+print(cojw('*i love python'))
+print(cojw('i love     python'))
+
+
+def s(a):
+    a.insert(a.index(a[-1]), 2)
+    a.pop(0)
+
+n = r = [3,4,5,6]
+s(r)
+print(r)
+

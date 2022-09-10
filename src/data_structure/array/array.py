@@ -1,5 +1,20 @@
+from math import inf
 from typing import List
 
+# https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/
+class Solution1437:
+    def kLengthApart(self, nums: List[int], k: int) -> bool:
+        prev = -inf
+
+        for idx, num in enumerate(nums):
+
+            if num == 1:
+                if idx - prev <= k:
+                    return False
+                else:
+                    prev = idx
+
+        return True
 
 # https://leetcode.com/problems/can-place-flowers/
 class Solution605:
@@ -49,3 +64,37 @@ class Solution1566:
             if count == (k - 1) * m: return True
 
         return False
+
+
+# https://leetcode.com/problems/reformat-the-string/
+class Solution1417:
+    def reformat(self, s: str) -> str:
+        alpha_list = []
+        numeric_list = []
+
+        for char in s:
+            if char.isalpha():
+                alpha_list.append(char)
+            else:
+                numeric_list.append(char)
+
+        m, n = len(alpha_list), len(numeric_list)
+        if abs(m - n) > 1:
+            return ''
+
+        long_list = alpha_list if m > n else numeric_list
+        short_list = numeric_list if m > n else alpha_list
+
+        res = []
+        while long_list:
+            first = long_list.pop()
+            second = short_list.pop() if short_list else ''
+
+            res.append(first)
+            res.append(second)
+
+        return ''.join(res)
+
+
+
+

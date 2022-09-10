@@ -11,7 +11,6 @@ class Solution3:
     def lengthOfLongestSubstring(self, s: str) -> int:
         char_pos = {}
         l = 0
-        n = len(s)
         res = 0
         for r, char in enumerate(s):
             if char in char_pos and char_pos[char] >= l:

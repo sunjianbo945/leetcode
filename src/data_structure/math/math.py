@@ -144,4 +144,35 @@ class Solution1317:
 # https://leetcode.com/problems/single-number-ii/
 class Solution137:
     def singleNumber(self, nums: List[int]) -> int:
-        return (sum(set(nums))*3 - sum(nums))//2
+        return (sum(set(nums)) * 3 - sum(nums)) // 2
+
+
+# https://leetcode.com/problems/statistics-from-a-large-sample/
+class Solution1093:
+    def sampleStats(self, count: List[int]) -> List[float]:
+        n = sum(count)
+
+        min_num, max_num, total, freq, mode = None, -1, 0, 0, 0
+        first, second, idx_count = None, None, 0
+        for num, frequency in enumerate(count):
+
+            total += num * frequency
+
+            idx_count += frequency
+            # math question NOT USE "not first". 0 is also not first
+            if first is None and idx_count >= n // 2:
+                first = num
+
+            if second is None and idx_count >= n // 2 + 1:
+                second = num
+
+            max_num = num if frequency > 0 else max_num
+            min_num = num if min_num is None and frequency > 0 else min_num
+
+            if frequency > freq:
+                freq = frequency
+                mode = num
+
+        median = second if n % 2 == 1 else (first + second) / 2
+        # print(n,first,second)
+        return [min_num, max_num, total / n, median, mode]

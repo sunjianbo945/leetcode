@@ -8,12 +8,13 @@ Table: Employees
 | manager_id    | int     |
 +---------------+---------+
 employee_id is the primary key for this table.
-Each row of this table indicates that the employee with ID employee_id and name employee_name reports his work to his/her direct manager with manager_id
-The head of the company is the employee with employee_id = 1.
+Each row of this table indicates that the employee with ID employee_id and name employee_name reports his work to
+his/her direct manager with manager_id. The head of the company is the employee with employee_id = 1.
 
 
 
-Write an SQL query to find employee_id of all employees that directly or indirectly report their work to the head of the company.
+Write an SQL query to find employee_id of all employees that directly or indirectly report their work to the head
+ of the company.
 
 The indirect relation between managers will not exceed 3 managers as the company is small.
 

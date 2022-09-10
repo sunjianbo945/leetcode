@@ -542,3 +542,36 @@ class Solution1379:
 
                 queue_c.append(node_c.left)
                 queue_c.append(node_c.right)
+
+
+'''
+FaceBook interview:
+Given a binary tree, with integer values at each node(Each node must have a value between 0-9 inclusive). Please return 
+the sum of the numbers represented by the values on each node in each root-to-leaf path. The level of the tree is the
+ significance digit on the number. Please see the example below
+ root => 2
+        / \
+       3   4
+     /  \
+    1    5
+The output should be: 231 + 235 + 24 = 490
+'''
+
+
+def func(root):
+    res = 0
+
+    def dfs(node, pre):
+        nonlocal res
+        if not node: return
+
+        curr = pre * 10 + node.val
+        if not node.left and not node.right:
+            res += curr
+            return
+
+        dfs(node.left, curr)
+        dfs(node.right, curr)
+
+    dfs(root, 0)
+    return res

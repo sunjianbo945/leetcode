@@ -25,6 +25,38 @@ from employee e join employee m on e.managerid = m.id
 group by m.id
 having count(*) >= 5
 ------------------------------------------------------------------------------------------------------------------------
+There is a table courses with columns: student and class
+
+Please list out all classes which have more than or equal to 5 students.
+
+For example, the table:
+
++---------+------------+
+| student | class      |
++---------+------------+
+| A       | Math       |
+| B       | English    |
+| C       | Math       |
+| D       | Biology    |
+| E       | Math       |
+| F       | Computer   |
+| G       | Math       |
+| H       | Math       |
+| I       | Math       |
++---------+------------+
+Should output:
+
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+
+select class
+from courses
+group by class
+having count(distinct student) >= 5
+------------------------------------------------------------------------------------------------------------------------
 Table: Activity
 
 +--------------+---------+
@@ -293,7 +325,8 @@ from person
 group by email
 having count(*)>1
 -----------------------------------------------------------------------------------------------------------------------
-The Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.
+The Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the
+department Id.
 
 +----+-------+--------+--------------+
 | Id | Name  | Salary | DepartmentId |
@@ -314,7 +347,8 @@ The Department table holds all departments of the company.
 | 2  | Sales    |
 +----+----------+
 
-Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, your SQL query should return the following rows (order of rows does not matter).
+Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, your
+SQL query should return the following rows (order of rows does not matter).
 
 +------------+----------+--------+
 | Department | Employee | Salary |

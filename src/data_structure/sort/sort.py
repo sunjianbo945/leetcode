@@ -4,6 +4,16 @@ from math import inf
 from typing import List
 
 
+# https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/
+class Solution1984:
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        res = inf
+        sorted_nums = sorted(nums)
+        for i in range(len(nums)-k+1):
+            res = min(res, sorted_nums[i+k-1]- sorted_nums[i])
+
+        return res
+
 # https://leetcode.com/problems/maximum-product-of-three-numbers/
 class Solution628:
     def maximumProduct(self, nums: List[int]) -> int:
@@ -163,3 +173,9 @@ class Solution1775:
             operation += 1
 
         return operation
+
+l = ['a', 'b', 'cc', 'dddd','ff']
+l.sort()
+print(l)
+l.sort(key=len)
+print(l)
