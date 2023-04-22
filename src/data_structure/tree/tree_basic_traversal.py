@@ -1,4 +1,5 @@
 from typing import List
+
 from src.data_structure.tree.model import TreeNode, Node
 
 
@@ -11,26 +12,28 @@ from src.data_structure.tree.model import TreeNode, Node
 #   /\
 #  4  5
 # is root -> left -> right : 2, 1, 4, 5, 3
-def preorder_traversal_recursion(root: 'TreeNode'):
-    if not root: return
+def preorder_traversal_recursion(root: 'TreeNode') -> List[int]:
+    if not root: return []
     res = []
 
     def dfs(node):
+        # base case/stop condition
         if not node: return
 
-        res.append(node.val)
-        dfs(node.left)
-        dfs(node.right)
+        res.append(node.val)  # handle parent
+        dfs(node.left)  # handle left
+        dfs(node.right)  # handle right
 
     dfs(root)
     return res
 
 
-def preorder_traversal_iterative(root: 'TreeNode'):
-    if not root: return
+# low chance
+def preorder_traversal_iterative(root: 'TreeNode') -> List[int]:
+    if not root: return []
     stack = [root]  # need a stack
     res = []
-    while stack:
+    while stack:  # stack neither empty nor None
         curr = stack.pop()
         res.append(curr.val)
         if curr.right:
@@ -41,7 +44,7 @@ def preorder_traversal_iterative(root: 'TreeNode'):
     return res
 
 
-def preorder_divide_conquer(node):
+def preorder_divide_conquer(node: 'TreeNode') -> List[int]:
     if not node: return []
 
     res = [node.val]
@@ -100,16 +103,15 @@ class Solution589:
 #   /\
 #  4  5
 # is left -> root -> right : 4, 1, 5, 2, 3
-def inorder_traversal_recursion(root: 'TreeNode'):
-    if not root: return
+def inorder_traversal_recursion(root: 'TreeNode') -> List[int]:
+    if not root: return []
     res = []
 
-    def dfs(node):
+    def dfs(node: 'TreeNode'):
         if not node: return
+
         dfs(node.left)
-
         res.append(node.val)
-
         dfs(node.right)
 
     dfs(root)
@@ -135,7 +137,7 @@ def inorder_traversal_iterative(root: 'TreeNode') -> List[int]:
     return res
 
 
-def inorder_divide_conquer(root):
+def inorder_divide_conquer(root: 'TreeNode') -> List[int]:
     if not root: return []
 
     res = []
@@ -158,7 +160,7 @@ def postorder_traversal_recursion(root: 'TreeNode') -> List[int]:
     if not root: return []
     res = []
 
-    def dfs(node):
+    def dfs(node: 'TreeNode'):
         if not node: return
         dfs(node.left)
         dfs(node.right)
@@ -211,7 +213,7 @@ def postorder_traversal_iterative2(root: 'TreeNode') -> List[int]:
     return res
 
 
-def postorder_divide_conquer(node: 'TreeNode'):
+def postorder_divide_conquer(node: 'TreeNode') -> List[int]:
     if not node: return []
 
     res = []
